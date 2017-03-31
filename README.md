@@ -1,1 +1,1 @@
-# GoTrivalHKBU.github.io
+# GoTravelHKBU.github.io
