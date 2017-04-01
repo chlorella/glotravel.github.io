@@ -61,10 +61,10 @@
     <!-- Header -->
     <header id="top" class="header">
         <div class="text-vertical-center">
-            <h1>Start Bootstrap</h1>
-            <h3>Free Bootstrap Themes &amp; Templates</h3>
+            <h1>GloTravel</h1>
+            <h3>Travelling in North Korea</h3>
             <br>
-            <a href="#about" class="btn btn-dark btn-lg">Find Out More</a>
+            <a href="#about" class="btn btn-dark btn-lg">Overview</a>
         </div>
     </header>
 
@@ -73,8 +73,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Stylish Portfolio is the perfect theme for your next project!</h2>
-                    <p class="lead">This theme features some wonderful photography courtesy of <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a>.</p>
+                    <h2>Overview</h2>
+                    <p class="lead">"briefly introduce North Korea, myth and fact about North Korea"</p>
                 </div>
             </div>
             <!-- /.row -->
@@ -84,6 +84,7 @@
 
     <!-- Services -->
     <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
+    <!-- Fact image/graph with pop up -->
     <section id="services" class="services bg-primary">
         <div class="container">
             <div class="row text-center">
@@ -156,11 +157,13 @@
     <!-- Callout -->
     <aside class="callout">
         <div class="text-vertical-center">
-            <h1>Vertically Centered Text</h1>
+            <h1>Typical travel route</h1>
+            
         </div>
     </aside>
 
     <!-- Portfolio -->
+    <!-- use of StoryMapJS -->
     <section id="portfolio" class="portfolio">
         <div class="container">
             <div class="row">
@@ -207,6 +210,7 @@
         <!-- /.container -->
     </section>
 
+    <!-- More section here -->
     <!-- Call to Action -->
     <aside class="call-to-action bg-primary">
         <div class="container">
@@ -221,13 +225,13 @@
     </aside>
 
     <!-- Map -->
-    <section id="contact" class="map">
+    <!--<section id="contact" class="map">
         <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
         <br />
         <small>
             <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
         </small>
-    </section>
+    </section>-->
 
     <!-- Footer -->
     <footer>
@@ -296,6 +300,7 @@
             }
         });
     });
+
     //#to-top button appears after scrolling
     var fixed = false;
     $(document).scroll(function() {
@@ -321,27 +326,28 @@
             }
         }
     });
+
     // Disable Google Maps scrolling
     // See http://stackoverflow.com/a/25904582/1607849
     // Disable scroll zooming and bind back the click event
-    var onMapMouseleaveHandler = function(event) {
-        var that = $(this);
-        that.on('click', onMapClickHandler);
-        that.off('mouseleave', onMapMouseleaveHandler);
-        that.find('iframe').css("pointer-events", "none");
-    }
-    var onMapClickHandler = function(event) {
-            var that = $(this);
-            // Disable the click handler until the user leaves the map area
-            that.off('click', onMapClickHandler);
-            // Enable scrolling zoom
-            that.find('iframe').css("pointer-events", "auto");
-            // Handle the mouse leave event
-            that.on('mouseleave', onMapMouseleaveHandler);
-        }
-        // Enable map zooming with mouse scroll when the user clicks the map
-    $('.map').on('click', onMapClickHandler);
-    </script>
+    // var onMapMouseleaveHandler = function(event) {
+    //     var that = $(this);
+    //     that.on('click', onMapClickHandler);
+    //     that.off('mouseleave', onMapMouseleaveHandler);
+    //     that.find('iframe').css("pointer-events", "none");
+    // }
+    // var onMapClickHandler = function(event) {
+    //         var that = $(this);
+    //         // Disable the click handler until the user leaves the map area
+    //         that.off('click', onMapClickHandler);
+    //         // Enable scrolling zoom
+    //         that.find('iframe').css("pointer-events", "auto");
+    //         // Handle the mouse leave event
+    //         that.on('mouseleave', onMapMouseleaveHandler);
+    //     }
+    //     // Enable map zooming with mouse scroll when the user clicks the map
+    // $('.map').on('click', onMapClickHandler);
+    // </script>
 
 </body>
 
