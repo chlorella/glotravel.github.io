@@ -1,0 +1,53 @@
+app.title = 'gender and age';
+
+option = {
+    tooltip : {
+        trigger: 'axis',
+        axisPointer : {           
+            type : 'shadow'       
+        }
+    },
+    legend: {
+        data: ['女','男']
+    },
+    grid: {
+        left: '5%',
+        right: '5%',
+        bottom: '5%',
+        containLabel: true
+    },
+    xAxis:  {
+        type: 'value'
+    },
+    yAxis: {
+        type: 'category',
+        data: ['81-90歲','71-80歲','61-70歲','51-60歲','41-50歲','31-40歲','21-30歲','11-20歲'
+]
+    },
+    series: [
+        {
+            name: '女',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'insideRight'
+                }
+            },
+            data: [1, 0, 3, 4, 8, 32, 40, 0]
+        },
+        {
+            name: '男',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'insideRight'
+                }
+            },
+            data: [0, 1, 2, 5, 10, 40, 45, 1]
+        },
+    ]
+};
