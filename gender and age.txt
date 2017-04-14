@@ -1,6 +1,7 @@
 app.title = 'gender and age';
 
 option = {
+    color:['#B2232B','#262996'],
     tooltip : {
         trigger: 'axis',
         axisPointer : {           
