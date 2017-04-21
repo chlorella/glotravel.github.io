@@ -40,7 +40,6 @@ option = {
             color: '#fff'
         }
     },
-  <!-- 研究唔到點令tooltip show「香港：xx人」 -->
     tooltip : {
         trigger: 'item',
         formatter : function (params) {
