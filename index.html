@@ -72,7 +72,8 @@
                 <div class="container">
                     <div class="navbar-header">
                         <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                            aria-controls="navbar">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
@@ -87,7 +88,7 @@
                         <!-- IMG BASED LOGO  -->
                         <!--  <a class="navbar-brand" href="#"><img src="img/logo.png" alt="logo"></a> -->
 
-
+                        <!--Todo: change navbar context-->
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul id="top-menu" class="nav navbar-nav navbar-right main_nav">
@@ -123,6 +124,7 @@
                         <div class="slider_caption">
                             <h2>不能自由行的神秘國度－北韓</h2>
                             <p>深入了解這個封閉國度，透過與當地人談話及體驗他們的生活，認識比想像中豐富的朝鮮社會。</p>
+                            <!--Todo: Intro short cut -->
                             <a href="#" class="slider_btn">你了解北韓嗎？</a>
                         </div>
                     </li>
@@ -137,6 +139,7 @@
                         <div class="slider_caption">
                             <h2>到訪北韓注意事項</h2>
                             <p>北韓禁忌多，你又知多少？</p>
+                            <!--Todo: QA short cut-->
                             <a href="#" class="slider_btn">你問我答</a>
                         </div>
                     </li>
@@ -277,16 +280,14 @@
         <br>
         <br>
         <br>
-        <section id="history" class="history">
-            <div class="container">
-                <div class="row">
-                    <iframe src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=13QAfY2io6MN2wWK-PDLbAC_Jk45QHpKYr-Qtd5zrnIM&font=Default&lang=en&initial_zoom=2&height=650' width='100%' height='650' webkitallowfullscreen mozallowfullscreen allowfullscreen
-                        frameborder='0'></iframe>
-                </div>
+        <div class="container">
+            <div class="row">
+                <iframe src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=13QAfY2io6MN2wWK-PDLbAC_Jk45QHpKYr-Qtd5zrnIM&font=Default&lang=en&initial_zoom=2&height=650'
+                    width='100%' height='650' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>
             </div>
-        </section>
-
+        </div>
         <!-- BEGAIN SKILLS  -->
+        <!--<div class="container" id="main" style="width: 1200px;height:600px;"></div>-->
         <div class="row">
             <div class="col-lg-12 col-md-12">
                 <div class="skills_area">
@@ -294,138 +295,9 @@
                     <div class="container">
                         <div class="skills">
                             <div class="heading">
-                                <h3 class="wow fadeInDown">旅遊＝資助北韓核計劃?</h3>
+                                <h3 class="wow fadeInDown">旅遊＝資助北韓核計劃?l</h3>
                             </div>
-
- <!-- START misunderstanding -->
-    <div class="container" id="main" style="width: 1200px;height:600px;"></div>
-    <script type="text/javascript">
-        
-        var myChart = echarts.init(document.getElementById('main'));
-
-        var option = {
-    tooltip: {},
-    legend: {
-        data: ['北韓收支'],
-        textStyle: {color: '#000000'}
-    },
-    xAxis: [{
-        data: ['軍事經費', '旅遊業收入', '煤礦出口收入'],
-        axisTick: {show: false},
-        axisLine: {show: true},
-        axisLabel: {
-            margin: 20,
-            textStyle: {
-                color: '#ffffff',
-                fontSize: 20
-            }
-        }
-    }],
-    yAxis: {
-        splitLine: {show: false},
-        axisTick: {show: false},
-        axisLine: {show: true},
-        axisLabel: {show: true}
-    },
-
-    textStyle: {
-                color: '#ffffff'
-            },
-    
-    markLine: {
-        z: -1
-    },
-    animationEasing: 'elasticOut',
-    series: [{
-        type: 'pictorialBar',
-        name: '北韓收支',
-        hoverAnimation: true,
-        
-        data: [{
-            value: 4000000000,
-            symbol: 'image://https://upload.wikimedia.org/wikipedia/commons/7/7b/United_States_one_dollar_bill%2C_obverse.jpg',
-            symbolRepeat: true,
-            symbolSize: ['40%', '20%'],
-            symbolOffset: [0, 10],
-            symbolMargin: '-30%',
-            animationDelay: function (dataIndex, params) {
-                return params.index * 30;
-            }
-        },  {
-            value: 43600000,
-            symbol: 'image://https://cdn.pixabay.com/photo/2013/07/13/11/29/camera-158262_960_720.png',
-            symbolSize: ['10%', '100%'],
-            symbolPosition: 'end',
-            z: 10
-        }, {
-            value: 1000000000,
-            symbol: 'image://http://images.clipartpanda.com/coal-clipart-coal_cart_T.png',
-            symbolSize: ['50%', '100%'],
-            symbolPosition: 'end'
-        }],
-        markLine: {
-            symbol: ['none', 'none'],
-            label: {
-                normal: {show: false}
-            },
-            lineStyle: {
-                normal: {
-                    color: '#0099ff',
-                    width: 1
-                }
-            },
-            data: [{
-                yAxis: 1000000000
-                
-            }]
-        }
-    }, 
-    {
-        name: '北韓收支',
-        type: 'pictorialBar',
-        barGap: '-100%',
-        symbol: 'circle',
-        itemStyle: {
-            normal: {
-                color: '#185491'
-            }
-        },
-       
-    }]
-};
-
-        myChart.setOption(option);
-    </script>
-    <!-- END misunderstanding -->
-
-                            <!-- START SINGLE SKILL-->
-                            <!-- <div class="col-lg-3 col-md-3 col-sm-3">
-                                <div class="single_skill wow fadeInUp">
-                                    <div id="myStat" data-dimension="150" data-text="85%" data-info="" data-width="10" data-fontsize="25" data-percent="85" data-fgcolor="#999" data-bgcolor="#fff" data-icon="fa-task"></div>
-                                    <h4>Design</h4>
-                                </div>
-                            </div>
-                            <!-- START SINGLE SKILL-->
-                            <!--<div class="col-lg-3 col-md-3 col-sm-3">
-                                <div class="single_skill wow fadeInUp">
-                                    <div id="myStathalf2" data-dimension="150" data-text="90%" data-info="" data-width="10" data-fontsize="25" data-percent="90" data-fgcolor="#999" data-bgcolor="#fff" data-icon="fa-task"></div>
-                                    <h4>HTML/CSS</h4>
-                                </div>
-                            </div>
-                            <!-- START SINGLE SKILL-->
-                            <!--<div class="col-lg-3 col-md-3 col-sm-3">
-                                <div class="single_skill wow fadeInUp">
-                                    <div id="myStat2" data-dimension="150" data-text="65%" data-info="" data-width="10" data-fontsize="25" data-percent="65" data-fgcolor="#999" data-bgcolor="#fff" data-icon="fa-task"></div>
-                                    <h4>jQuery</h4>
-                                </div>
-                            </div>
-                            <!-- START SINGLE SKILL-->
-                            <!--<div class="col-lg-3 col-md-3 col-sm-3">
-                                <div class="single_skill wow fadeInUp">
-                                    <div id="myStat3" data-dimension="150" data-text="75%" data-info="" data-width="10" data-fontsize="25" data-percent="75" data-fgcolor="#999" data-bgcolor="#fff" data-icon="fa-task"></div>
-                                    <h4>WordPress</h4>
-                                </div>
-                            </div>
+                            <div class="container" id="main" style="width: 1200px;height:600px;"></div>
                         </div>
                     </div>
                 </div>
@@ -442,8 +314,10 @@
                 <div class="col-lg-12 col-md-12">
                     <!-- BEGAIN SERVICE HEADING -->
                     <div class="heading">
-                        <h2 class="wow fadeInLeftBig">Our Services</h2>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+                        <h2 class="wow fadeInLeftBig">到訪北韓你問我答</h2>
+                        <!--<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
+                            in some form, by injected humour, or randomised words which don't look even slightly believable.
+                        </p>-->
                     </div>
                 </div>
             </div>
@@ -456,13 +330,27 @@
                                 <!-- BEGAIN SINGLE SERVICE -->
                                 <div class="single_service wow fadeInLeft">
                                     <div class="service_iconarea">
-                                        <span class="fa fa-line-chart service_icon"></span>
+                                        <!-- Change icon-->
+                                        <!--[text-primary] > [service_icon]-->
+                                        <span class="fa fa-camera service_icon"></span>
                                     </div>
-                                    <h3 class="service_title">Planning & Strategy</h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going
-                                        to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text</p>
+                                    <!--title + button-->
+                                    <h3 class="service_title">可否攜帶電子器材？</h3>
+                                    <button type="button" class="btn btn-light btn-block" data-toggle="modal" data-target="#q2">答案</button>
                                 </div>
                             </div>
+                            <!--BEGAIN modal 1-->
+                            <div id="q2" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <img class="img-responsive" src="img/QA-phone.jpg">
+                                        <strong >北韓人有沒有手機？</strong>
+                                        <p >2013年金正恩宣佈朝鮮成功生產智能手機「阿里郎」，當中有北韓版WhatsApp、相機、字典等，更有北韓版Angry Bird，而操作系統和Android系統非常相似。現時北韓的手機不如想像般罕有，平均每10個人擁有一部手機。
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--END modal 1-->
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <!-- BEGAIN SINGLE SERVICE -->
                                 <div class="single_service wow fadeInRight">
@@ -470,8 +358,10 @@
                                         <span class="fa fa-suitcase service_icon"></span>
                                     </div>
                                     <h3 class="service_title">Corporate Branding</h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going
-                                        to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text</p>
+                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have
+                                        suffered alteration in some form, by injected humour, or randomised words which don't
+                                        look even slightly believable. If you are going to use a passage of Lorem Ipsum,
+                                        you need to be sure there isn't anything embarrassing hidden in the middle of text</p>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
@@ -481,8 +371,10 @@
                                         <span class="fa fa-eraser service_icon"></span>
                                     </div>
                                     <h3 class="service_title">Web Desing & Development</h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going
-                                        to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text</p>
+                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have
+                                        suffered alteration in some form, by injected humour, or randomised words which don't
+                                        look even slightly believable. If you are going to use a passage of Lorem Ipsum,
+                                        you need to be sure there isn't anything embarrassing hidden in the middle of text</p>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
@@ -492,8 +384,10 @@
                                         <span class="fa fa-paper-plane service_icon"></span>
                                     </div>
                                     <h3 class="service_title">SEO,SMM and Internet marketing</h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going
-                                        to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text</p>
+                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have
+                                        suffered alteration in some form, by injected humour, or randomised words which don't
+                                        look even slightly believable. If you are going to use a passage of Lorem Ipsum,
+                                        you need to be sure there isn't anything embarrassing hidden in the middle of text</p>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
@@ -503,8 +397,10 @@
                                         <span class="fa fa-envelope-o service_icon"></span>
                                     </div>
                                     <h3 class="service_title">Email Marketing</h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going
-                                        to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text</p>
+                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have
+                                        suffered alteration in some form, by injected humour, or randomised words which don't
+                                        look even slightly believable. If you are going to use a passage of Lorem Ipsum,
+                                        you need to be sure there isn't anything embarrassing hidden in the middle of text</p>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
@@ -514,8 +410,10 @@
                                         <span class="fa fa-support service_icon"></span>
                                     </div>
                                     <h3 class="service_title">Premium Customer SUpport</h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going
-                                        to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text</p>
+                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have
+                                        suffered alteration in some form, by injected humour, or randomised words which don't
+                                        look even slightly believable. If you are going to use a passage of Lorem Ipsum,
+                                        you need to be sure there isn't anything embarrassing hidden in the middle of text</p>
                                 </div>
                             </div>
                         </div>
@@ -527,220 +425,13 @@
     <!--=========== END SERVICE SECTION ================-->
 
     <!--=========== BEGAIN WORKS SECTION ================-->
-    <section id="works">
-        <section id="services" class="services bg-primary">
-            <div class="row">
-                <div class="col-lg-12 col-md-12">
-                    <div class="counter_section">
-                        <div class="container">
-                            <div class="row text-center">
-                                <div class="heading">
-                                    <h3 class="wow fadeInLeftBig">到訪北韓你問我答</h3>
-                                </div>
-                                <hr class="small">
-                                <div class="row">
-                                    <div class="col-md-3 col-sm-6">
-                                        <div class="service-item">
-                                            <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <!--Change Image-->
-                                <i class="fa fa-camera fa-stack-1x text-primary"></i>
-                            </span>
-                                            <h4>
-                                                <strong>可否攜帶電子器材？</strong>
-                                            </h4>
-                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#q1">答案</button>
 
-                                            <div id="q1" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog modal-lg">
-                                                    <div class="modal-content">
-                                                        <img class="img-responsive" src="img/QA-1.jpg">
-                                                        <strong style="color:black;">可否攜帶電子器材？</strong>
-                                                        <p style="color:black;">北韓曾經不允許旅客攜帶手機入境，但現時旅客已可攜帶手機、相機、電腦等電子器材入境。<br>而且牌子並無限制，三星、LG等南韓品牌也可帶入境。<br> 不過在過關時，北韓海關會檢查手機和電腦內的資料、相片等，亦會檢查電子器材有否GPS定位裝置功能。
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-6">
-                                        <div class="service-item">
-                                            <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <!--Change Image-->
-                                <i class="fa fa-mobile fa-stack-1x text-primary"></i>
-                            </span>
-                                            <h4>
-                                                <strong>北韓人有沒有手機？</strong>
-                                            </h4>
-                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#q2">答案</button>
 
-                                            <div id="q2" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog modal-lg">
-                                                    <div class="modal-content">
-                                                        <img class="img-responsive" src="img/QA-phone.jpg">
-                                                        <strong style="color:black;">北韓人有沒有手機？</strong>
-                                                        <p style="color:black;">2013年金正恩宣佈朝鮮成功生產智能手機「阿里郎」，當中有北韓版WhatsApp、相機、字典等，更有北韓版Angry Bird，而操作系統和Android系統非常相似。現時北韓的手機不如想像般罕有，平均每10個人擁有一部手機。
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-6">
-                                        <div class="service-item">
-                                            <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-apple fa-stack-1x text-primary"></i>
-                            </span>
-                                            <h4>
-                                                <strong> 可否帶有關美國的產品？</strong>
-                                            </h4>
-                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#q3">答案</button>
-
-                                            <div id="q3" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog modal-lg">
-                                                    <div class="modal-content">
-                                                        <img class="img-responsive" src="img/QA-USA.jpg">
-                                                        <strong style="color:black;">可否帶有關美國的產品？</strong>
-                                                        <p style="color:black;">有指北韓禁止遊客攜帶有關美國的產品，連穿牛仔褲也不可以。事實上，只要不要穿上含有反對領導人訊息的衣服，在北韓的衣著沒太大講究
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-6">
-                                        <div class="service-item">
-                                            <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-globe fa-stack-1x text-primary"></i>
-                            </span>
-                                            <h4>
-                                                <strong>北韓謝絕西方文化？</strong>
-                                            </h4>
-                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#q4">答案</button>
-
-                                            <div id="q4" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog modal-lg">
-                                                    <div class="modal-content">
-                                                        <img class="img-responsive" src="img/QA-western.jpg">
-                                                        <strong style="color:black;">北韓謝絕西方文化？</strong>
-                                                        <p style="color:black;">平壤在2016年舉行第一屆大同江啤酒節，反映西方文化在北韓萌芽。現場的侍應穿上時尚制服，為賓客送上啤酒，氣氛如同西式的啤酒節。<br>此外，北韓亦有餐廳提供意粉、薄餅等西式食品，可見北韓亦有西方文化。
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-6">
-                                        <div class="service-item">
-                                            <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-bus fa-stack-1x text-primary"></i>
-                            </span>
-                                            <h4>
-                                                <strong>乘搭甚麼交通工具？</strong>
-                                            </h4>
-                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#q5">答案</button>
-
-                                            <div id="q5" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog modal-lg">
-                                                    <div class="modal-content">
-                                                        <img class="img-responsive" src="img/QA-3.jpg">
-                                                        <strong style="color:black;">乘搭甚麼交通工具？</strong>
-                                                        <p style="color:black;">北韓有巴士、電車、地鐵等交通工具，但北韓當局希望盡量減少遊客和人民接觸，因此旅行團多以旅遊巴接送遊客。<br> 一般遊客只可在平壤地鐵乘搭一至兩個站，因為只有首兩個站金碧輝煌，其餘車站比較平實。<br>而GLO Travel團隊可安排遊客與當地人一起乘搭六個地鐵站，甚至有機會遊歷整條地鐵線。
-                                                            <br>此外，GLO Travel團隊也會安排遊客乘搭電車和騎單車，進一步體驗北韓的生活。</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-6">
-                                        <div class="service-item">
-                                            <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-building-o fa-stack-1x text-primary"></i>
-                            </span>
-                                            <h4>
-                                                <strong>可否逃出羊角島酒店？</strong>
-                                            </h4>
-                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#q6">答案</button>
-                                            <div id="q6" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog modal-lg">
-                                                    <div class="modal-content">
-                                                        <img class="img-responsive" src="img/QA-hotel.jpg">
-                                                        <strong style="color:black;">可否逃出羊角島酒店？</strong>
-                                                        <p style="color:black;"> 羊角島國際酒店是專門接待外國遊客的五星級酒店，一般遊客均被禁止入夜後離開酒店。<br>早前有香港人擅自離團，在晚上離開酒店，並走到平壤車站，最後被導遊責備。究竟可否「逃出」羊角島酒店？<br>有人說遊客行蹤會被監視，有遊客則能平安走到平壤街頭，亦曾遊客被北韓公安扣留。<br>而GLO Travel的參與者曾在導遊帶領下在晚上離開羊角島酒店，觀看平壤大街及未來科學家街的夜景。
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-6">
-                                        <div class="service-item">
-                                            <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <!--Change Image-->
-                                <i class="fa fa-street-view fa-stack-1x text-primary"></i>
-                            </span>
-                                            <h4>
-                                                <strong>是否要向領導人鞠躬？</strong>
-                                            </h4>
-                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#q7">答案</button>
-
-                                            <div id="q7" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog modal-lg">
-                                                    <div class="modal-content">
-                                                        <img class="img-responsive" src="img/QA-Kim.jpg">
-                                                        <strong style="color:black;">是否要向領導人鞠躬？</strong>
-                                                        <p style="color:black;">北韓旅遊其中一個必到行程是到萬壽台紀念碑，向兩位北韓領導人金日成和金正日的銅像鞠躬，但可否不鞠躬？<br>其實遊客不一定要鞠躬，不鞠躬不會被拿去問話，而鞠躬亦不等於認同極權統治。遊客可自由選擇鞠躬與否，導遊亦會理解遊客的取態。
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-6">
-                                        <div class="service-item">
-                                            <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-money fa-stack-1x text-primary"></i>
-                            </span>
-                                            <h4>
-                                                <strong>北韓有沒有市場經濟？</strong>
-                                            </h4>
-                                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#q8">答案</button>
-
-                                            <div id="q8" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog modal-lg">
-                                                    <div class="modal-content">
-                                                        <img class="img-responsive" src="img/QA-market.jpg">
-                                                        <strong style="color:black;">北韓有沒有市場經濟？</strong>
-                                                        <p style="color:black;">北韓奉行共產主義制度，不少人以為北韓人民只可由國家配給物資，不能自由買賣。<br>其實北韓在90年代出現大饑荒和經濟崩潰後，因一直沿用的國家糧食分配系統失效，國家便開始暗許部份市場經濟，致使市場出現。</br>
-                                                            現時平壤更有「光復地區百貨公司」，內有食物、服裝、電視、洗衣機等貨品，更有不少經中國大陸進口的貨品，亦有從古巴、俄羅斯、越南等共產國家的食品。</p>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- /.row (nested) -->
-                                </div>
-                                <!-- /.col-lg-10 -->
-                            </div>
-                            <!-- /.row -->
-                        </div>
-                        <!-- /.container -->
-                    </div>
-                </div>
-        </section>
-        <!-- BEGAIN FORTFOLIO WORSK SECTION -->
-        <div class="row">
-            <div class="portfolio_area">
-                <!-- BEGAIN PORTFOLIO HEADER -->
-                <!--<div class="row">
+    <!-- BEGAIN FORTFOLIO WORSK SECTION -->
+    <div class="row">
+        <div class="portfolio_area">
+            <!-- BEGAIN PORTFOLIO HEADER -->
+            <!--<div class="row">
                     <div class="col-lg-12 col-md-12">
                         <div class="container">
                             <div class="heading">
@@ -751,68 +442,69 @@
                 </div>
                 <!-- END PORTFOLIO HEADER -->
 
-                <!-- use of StoryMapJS -->
-    <section id="portfolio">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12">
-                    <div class="heading">
-                        <h2 class="wow fadeInLeftBig">計劃行程</h2>
-                    </div>
-                    <form id="route">
-                        <div class="form-group">
-                            <div class="input-group">
-                                <label for="r_q1">Q1. 你希望擁有多少天的旅程？</label>
+            <!-- use of StoryMapJS -->
+            <section id="portfolio">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="heading">
+                                <h2 class="wow fadeInLeftBig">計劃行程</h2>
+                            </div>
+                            <form id="route">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <label for="r_q1">Q1. 你希望擁有多少天的旅程？</label>
 
-                                <select class="form-control" id="r_q1">
+                                        <select class="form-control" id="r_q1">
                                 <option>5</option>
                                 <option>7</option>
                                 <option>8</option>
                                 <option>9</option>
                             </select>
-                            </div>
-                            <!-- &nbsp = space-->
-                            <div class="input-group">
-                                <br>
-                                <label for="r_q2">Q2. 你的預算有多少？ </label>
-                                <b>$9000 </b><input id="r_q2" type="text" data-slider-min="9000" data-slider-max="13000" data-slider-step="500" data-slider-value="[9000,10000]" /><b>&nbsp $14000</b>
-                            </div>
-                            <div class="input-group">
-                                <br>
-                                <label for="r_q2">Q3. How Many person in the trip? </label>
-                                <input class="form-control" id="r_q2" type="number" min="1" max=10 />
-                            </div>
-                            <div class="input-group">
-                                <br>
-                                <label for="r_q4">Q4. 你喜歡於旅程中運動嗎？</label>
-                                <select class="form-control" id="r_q4">
+                                    </div>
+                                    <!-- &nbsp = space-->
+                                    <div class="input-group">
+                                        <br>
+                                        <label for="r_q2">Q2. 你的預算有多少？ </label>
+                                        <b>$9000 </b><input id="r_q2" type="text" data-slider-min="9000" data-slider-max="13000"
+                                            data-slider-step="500" data-slider-value="[9000,10000]" /><b>&nbsp $14000</b>
+                                    </div>
+                                    <div class="input-group">
+                                        <br>
+                                        <label for="r_q2">Q3. How Many person in the trip? </label>
+                                        <input class="form-control" id="r_q2" type="number" min="1" max=10 />
+                                    </div>
+                                    <div class="input-group">
+                                        <br>
+                                        <label for="r_q4">Q4. 你喜歡於旅程中運動嗎？</label>
+                                        <select class="form-control" id="r_q4">
                                 <option>喜歡</option>
                                 <option>不喜歡</option>
                                 <option>無所謂</option>
                             </select>
-                                <div class="input-group">
-                                    <br>
-                                    <label for="r_q5">Q5. 你想與北韓人民歡度節慶嗎？</label>
-                                    <select class="form-control" id="r_q5">
+                                        <div class="input-group">
+                                            <br>
+                                            <label for="r_q5">Q5. 你想與北韓人民歡度節慶嗎？</label>
+                                            <select class="form-control" id="r_q5">
                                 <option>想</option>
                                 <option>不想</option>
                                 <option>無所謂</option>
                             </select>
-                                </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <button id="summit" type="submit" class="btn btn-default">Submit</button>
+                            </form>
                             </div>
-                            <br>
-                            <button id="summit" type="submit" class="btn btn-default">Submit</button>
-                    </form>
+                            <!-- /.col-lg-10 -->
+                        </div>
+                        <!-- /.row -->
                     </div>
-                    <!-- /.col-lg-10 -->
-                </div>
-                <!-- /.row -->
-            </div>
-            <!-- /.container -->
-    </section>
+                    <!-- /.container -->
+            </section>
 
-                <!-- BEGAIN PORTFOLIO GALLERY -->
-                <!--<div class="row">
+            <!-- BEGAIN PORTFOLIO GALLERY -->
+            <!--<div class="row">
                     <div class="portfolio_gallery">
                         <div id="elastic_grid_demo"></div>
                     </div>
@@ -821,582 +513,615 @@
             </div>
         </div>
         <!-- END FORTFOLIO WORSK SECTION -->
-    </section>
-    <!--=========== END WORKS SECTION ================-->
+        </section>
+        <!--=========== END WORKS SECTION ================-->
 
-    <!--=========== BEGAIN TEAM SECTION ================-->
-    <section id="team">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12">
-                    <!-- BEGAIN ABOUT HEADING -->
-                    <div class="heading">
-                        <h2 class="wow fadeInLeftBig">誰曾報團到北韓？</h2>
-                    </div>
-                    <div class="team_area">
+        <!--=========== BEGAIN TEAM SECTION ================-->
+        <section id="team">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <!-- BEGAIN ABOUT HEADING -->
+                        <div class="heading">
+                            <h2 class="wow fadeInLeftBig">誰曾報團到北韓？</h2>
+                        </div>
+                        <div class="team_area">
 
-                         <!-- START customer: gender and age-->
+                            <!-- START customer: gender and age-->
                             <div id="main2" style="width: 1200px;height:600px;"></div>
-    <script type="text/javascript">
-        var myChart = echarts.init(document.getElementById('main2'));
+                            <script type="text/javascript">
+                                var myChart = echarts.init(document.getElementById('main2'));
 
-            var option = {
-                title: {
-        text: '性別與年齡分布',
-    },
-    color:['#B2232B','#262996'],
-    tooltip : {
-        trigger: 'axis',
-        axisPointer : {           
-            type : 'shadow'       
-        }
-    },
-    legend: {
-        data: ['女','男']
-    },
-    grid: {
-        left: '5%',
-        right: '5%',
-        bottom: '5%',
-        containLabel: true
-    },
-    xAxis:  {
-        type: 'value'
-    },
-    yAxis: {
-        type: 'category',
-        data: ['81-90歲','71-80歲','61-70歲','51-60歲','41-50歲','31-40歲','21-30歲','11-20歲'
-]
-    },
-    series: [
-        {
-            name: '女',
-            type: 'bar',
-            stack: '总量',
-            label: {
-                normal: {
-                    show: true,
-                    position: 'insideRight'
-                }
-            },
-            data: [1, 0, 3, 4, 8, 32, 40, 0]
-        },
-        {
-            name: '男',
-            type: 'bar',
-            stack: '总量',
-            label: {
-                normal: {
-                    show: true,
-                    position: 'insideRight'
-                }
-            },
-            data: [0, 1, 2, 5, 10, 40, 45, 1]
-        },
-    ]
-};
-        myChart.setOption(option);
-    </script>
-                         <!-- END customer: gender and age-->
+                                var option = {
+                                    title: {
+                                        text: '性別與年齡分布',
+                                    },
+                                    color: ['#B2232B', '#262996'],
+                                    tooltip: {
+                                        trigger: 'axis',
+                                        axisPointer: {
+                                            type: 'shadow'
+                                        }
+                                    },
+                                    legend: {
+                                        data: ['女', '男']
+                                    },
+                                    grid: {
+                                        left: '5%',
+                                        right: '5%',
+                                        bottom: '5%',
+                                        containLabel: true
+                                    },
+                                    xAxis: {
+                                        type: 'value'
+                                    },
+                                    yAxis: {
+                                        type: 'category',
+                                        data: ['81-90歲', '71-80歲', '61-70歲', '51-60歲', '41-50歲', '31-40歲', '21-30歲', '11-20歲'
+                                        ]
+                                    },
+                                    series: [
+                                        {
+                                            name: '女',
+                                            type: 'bar',
+                                            stack: '总量',
+                                            label: {
+                                                normal: {
+                                                    show: true,
+                                                    position: 'insideRight'
+                                                }
+                                            },
+                                            data: [1, 0, 3, 4, 8, 32, 40, 0]
+                                        },
+                                        {
+                                            name: '男',
+                                            type: 'bar',
+                                            stack: '总量',
+                                            label: {
+                                                normal: {
+                                                    show: true,
+                                                    position: 'insideRight'
+                                                }
+                                            },
+                                            data: [0, 1, 2, 5, 10, 40, 45, 1]
+                                        },
+                                    ]
+                                };
+                                myChart.setOption(option);
+                            </script>
+                            <!-- END customer: gender and age-->
 
-                          <!-- START customer: sector-->
+                            <!-- START customer: sector-->
                             <div id="main3" style="width: 1200px;height:600px;"></div>
-    <script type="text/javascript">
-        var myChart = echarts.init(document.getElementById('main3'));
+                            <script type="text/javascript">
+                                var myChart = echarts.init(document.getElementById('main3'));
 
-            var option = {
-                title: {
-        text: '職業分布',
-    },
-    tooltip: {
-        trigger: 'item',
-        formatter: "{a} <br/>{b}: {c} ({d}%)"
-    },
-    legend: {
-        orient: 'vertical',
-        x: 'right',
-        data:['學生','無業','退休','政府部門','紀律部隊','慈善機構','金融/銀行/投資','商業部門/顧問','互聯網公司','航空','工程/軟件開發','廣告','教育','出版','其他']
-    },
-    series: [
-        {
-            name:'行業',
-            type:'pie',
-            radius: ['50%', '70%'],
-            avoidLabelOverlap: false,
-            label: {
-                normal: {
-                    show: false,
-                    position: 'center'
-                },
-                emphasis: {
-                    show: true,
-                    textStyle: {
-                        fontSize: '50',
-                        fontWeight: 'bold'
-                    }
-                }
-            },
-            labelLine: {
-                normal: {
-                    show: false
-                }
-            },
-            data:[
-                {value:29, name:'學生'},
-                {value:13, name:'無業'},
-                {value:7, name:'退休'},
-                {value:6, name:'政府部門'},
-                {value:2, name:'紀律部隊'},
-                {value:10, name:'醫院/醫療部門'},
-                {value:3, name:'慈善機構'},
-                {value:17, name:'金融/銀行/投資'},
-                {value:57, name:'商業部門/顧問'},
-                {value:8, name:'互聯網公司'},
-                {value:5, name:'航空'},
-                {value:13, name:'工程/軟件開發'},
-                {value:13, name:'廣告'},
-                {value:3, name:'教育'},
-                {value:3, name:'出版'},
-                {value:3, name:'其他'}
-            ]
-        }
-    ]
-};
+                                var option = {
+                                    title: {
+                                        text: '職業分布',
+                                    },
+                                    tooltip: {
+                                        trigger: 'item',
+                                        formatter: "{a} <br/>{b}: {c} ({d}%)"
+                                    },
+                                    legend: {
+                                        orient: 'vertical',
+                                        x: 'right',
+                                        data: ['學生', '無業', '退休', '政府部門', '紀律部隊', '慈善機構', '金融/銀行/投資', '商業部門/顧問', '互聯網公司', '航空', '工程/軟件開發', '廣告', '教育', '出版', '其他']
+                                    },
+                                    series: [
+                                        {
+                                            name: '行業',
+                                            type: 'pie',
+                                            radius: ['50%', '70%'],
+                                            avoidLabelOverlap: false,
+                                            label: {
+                                                normal: {
+                                                    show: false,
+                                                    position: 'center'
+                                                },
+                                                emphasis: {
+                                                    show: true,
+                                                    textStyle: {
+                                                        fontSize: '50',
+                                                        fontWeight: 'bold'
+                                                    }
+                                                }
+                                            },
+                                            labelLine: {
+                                                normal: {
+                                                    show: false
+                                                }
+                                            },
+                                            data: [
+                                                { value: 29, name: '學生' },
+                                                { value: 13, name: '無業' },
+                                                { value: 7, name: '退休' },
+                                                { value: 6, name: '政府部門' },
+                                                { value: 2, name: '紀律部隊' },
+                                                { value: 10, name: '醫院/醫療部門' },
+                                                { value: 3, name: '慈善機構' },
+                                                { value: 17, name: '金融/銀行/投資' },
+                                                { value: 57, name: '商業部門/顧問' },
+                                                { value: 8, name: '互聯網公司' },
+                                                { value: 5, name: '航空' },
+                                                { value: 13, name: '工程/軟件開發' },
+                                                { value: 13, name: '廣告' },
+                                                { value: 3, name: '教育' },
+                                                { value: 3, name: '出版' },
+                                                { value: 3, name: '其他' }
+                                            ]
+                                        }
+                                    ]
+                                };
 
-        myChart.setOption(option);
-    </script>
-                         <!-- END customer: sector-->
+                                myChart.setOption(option);
+                            </script>
+                            <!-- END customer: sector-->
 
-                           <!-- START customer: travelling time-->
+                            <!-- START customer: travelling time-->
                             <div id="main4" style="width: 1200px;height:600px;"></div>
-    <script type="text/javascript">
-        var myChart = echarts.init(document.getElementById('main4'));
+                            <script type="text/javascript">
+                                var myChart = echarts.init(document.getElementById('main4'));
 
-            var option = {
-    title: {
-        text: '到訪北韓月份分布',
-    },
-        color:['#A11FFF','#16E042','#FFA322'],
-    tooltip: {
-        trigger: 'axis'
-    },
-    legend: {
-        data:['2015年','2016年','2017年']
-    },
-    toolbox: {
-        show: true,
-        feature: {
-            dataZoom: {
-                yAxisIndex: 'none'
-            },
-            dataView: {readOnly: false},
-            magicType: {type: ['line', 'bar']},
-            restore: {},
-            saveAsImage: {}
-        }
-    },
-    xAxis:  {
-        type: 'category',
-        boundaryGap: false,
-        data: ['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月']
-    },
-    yAxis: {
-        type: 'value',
-        axisLabel: {
-            formatter: '{value}人'
-        }
-    },
-    series: [
-        {
-            name:'2015年',
-            type:'line',
-            data:[0,0,0,0,0,0,0,0,0,4,0,0],
-            markPoint: {
-                data: [
-                    {type: 'max', name: '最大值'}
-                ]
-            },
-        },
-        {
-            name:'2016年',
-            type:'line',
-            data:[0,0,9,0,7,0,22,15,10,23,0,12],
-            markPoint: {
-                data: [
-                     {type: 'max', name: '最大值'}
-                ]
-            },
-        },
-        {
-            name:'2017年',
-            type:'line',
-            data:[10,0,0,80,0,0,0,0,0,0,0,0],
-            markPoint: {
-                data: [
-                    {type: 'max', name: '最大值'},
-                ]
-            },
-        }
-    ]
-};
+                                var option = {
+                                    title: {
+                                        text: '到訪北韓月份分布',
+                                    },
+                                    color: ['#A11FFF', '#16E042', '#FFA322'],
+                                    tooltip: {
+                                        trigger: 'axis'
+                                    },
+                                    legend: {
+                                        data: ['2015年', '2016年', '2017年']
+                                    },
+                                    toolbox: {
+                                        show: true,
+                                        feature: {
+                                            dataZoom: {
+                                                yAxisIndex: 'none'
+                                            },
+                                            dataView: { readOnly: false },
+                                            magicType: { type: ['line', 'bar'] },
+                                            restore: {},
+                                            saveAsImage: {}
+                                        }
+                                    },
+                                    xAxis: {
+                                        type: 'category',
+                                        boundaryGap: false,
+                                        data: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
+                                    },
+                                    yAxis: {
+                                        type: 'value',
+                                        axisLabel: {
+                                            formatter: '{value}人'
+                                        }
+                                    },
+                                    series: [
+                                        {
+                                            name: '2015年',
+                                            type: 'line',
+                                            data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0],
+                                            markPoint: {
+                                                data: [
+                                                    { type: 'max', name: '最大值' }
+                                                ]
+                                            },
+                                        },
+                                        {
+                                            name: '2016年',
+                                            type: 'line',
+                                            data: [0, 0, 9, 0, 7, 0, 22, 15, 10, 23, 0, 12],
+                                            markPoint: {
+                                                data: [
+                                                    { type: 'max', name: '最大值' }
+                                                ]
+                                            },
+                                        },
+                                        {
+                                            name: '2017年',
+                                            type: 'line',
+                                            data: [10, 0, 0, 80, 0, 0, 0, 0, 0, 0, 0, 0],
+                                            markPoint: {
+                                                data: [
+                                                    { type: 'max', name: '最大值' },
+                                                ]
+                                            },
+                                        }
+                                    ]
+                                };
 
-        myChart.setOption(option);
-    </script>
-                         <!-- END customer: travelling time-->
+                                myChart.setOption(option);
+                            </script>
+                            <!-- END customer: travelling time-->
 
-                        <!-- BEGAIN TEAM SLIDER -->
-                        <div class="team_slider">
-                            <!-- BEGAIN SINGLE TEAM SLIDE#1 -->
-                            <div class="col-lg-3 col-md-3 col-sm-4">
-                                <div class="single_team wow fadeInUp">
-                                    <div class="team_img">
-                                        <img src="img/team-1.jpg" alt="img">
-                                    </div>
-                                    <h5 class="">Jamie Sidens</h5>
-                                    <span>Founder</span>
-                                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature</p>
-                                    <div class="team_social">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- BEGAIN SINGLE TEAM SLIDE#2 -->
-                            <div class="col-lg-3 col-md-3 col-sm-4">
-                                <div class="single_team wow fadeInUp">
-                                    <div class="team_img">
-                                        <img src="img/team-1.jpg" alt="img">
-                                    </div>
-                                    <h5>Jamie Sidens</h5>
-                                    <span>CMS Developer</span>
-                                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature</p>
-                                    <div class="team_social">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <!-- BEGAIN TEAM SLIDER -->
+                            <div class="team_slider">
+                                <!-- BEGAIN SINGLE TEAM SLIDE#1 -->
+                                <div class="col-lg-3 col-md-3 col-sm-4">
+                                    <div class="single_team wow fadeInUp">
+                                        <div class="team_img">
+                                            <img src="img/team-1.jpg" alt="img">
+                                        </div>
+                                        <h5 class="">Jamie Sidens</h5>
+                                        <span>Founder</span>
+                                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in
+                                            a piece of classical Latin literature</p>
+                                        <div class="team_social">
+                                            <a href="#"><i class="fa fa-facebook"></i></a>
+                                            <a href="#"><i class="fa fa-twitter"></i></a>
+                                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- BEGAIN SINGLE TEAM SLIDE#3 -->
-                            <div class="col-lg-3 col-md-3 col-sm-4">
-                                <div class="single_team wow fadeInUp">
-                                    <div class="team_img">
-                                        <img src="img/team-1.jpg" alt="img">
-                                    </div>
-                                    <h5>Jamie Sidens</h5>
-                                    <span>Manager</span>
-                                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature</p>
-                                    <div class="team_social">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- BEGAIN SINGLE TEAM SLIDE#4 -->
-                            <div class="col-lg-3 col-md-3 col-sm-4">
-                                <div class="single_team wow fadeInUp">
-                                    <div class="team_img">
-                                        <img src="img/team-1.jpg" alt="img">
-                                    </div>
-                                    <h5>Jamie Sidens</h5>
-                                    <span>Developer</span>
-                                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature</p>
-                                    <div class="team_social">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                                <!-- BEGAIN SINGLE TEAM SLIDE#2 -->
+                                <div class="col-lg-3 col-md-3 col-sm-4">
+                                    <div class="single_team wow fadeInUp">
+                                        <div class="team_img">
+                                            <img src="img/team-1.jpg" alt="img">
+                                        </div>
+                                        <h5>Jamie Sidens</h5>
+                                        <span>CMS Developer</span>
+                                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in
+                                            a piece of classical Latin literature</p>
+                                        <div class="team_social">
+                                            <a href="#"><i class="fa fa-facebook"></i></a>
+                                            <a href="#"><i class="fa fa-twitter"></i></a>
+                                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- BEGAIN SINGLE TEAM SLIDE#5 -->
-                            <div class="col-lg-3 col-md-3 col-sm-4">
-                                <div class="single_team wow fadeInUp">
-                                    <div class="team_img">
-                                        <img src="img/team-1.jpg" alt="img">
-                                    </div>
-                                    <h5>Jamie Sidens</h5>
-                                    <span>Programmer</span>
-                                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature</p>
-                                    <div class="team_social">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- BEGAIN SINGLE TEAM SLIDE#6 -->
-                            <div class="col-lg-3 col-md-3 col-sm-4">
-                                <div class="single_team wow fadeInUp">
-                                    <div class="team_img">
-                                        <img src="img/team-1.jpg" alt="img">
-                                    </div>
-                                    <h5>Jamie Sidens</h5>
-                                    <span>Web Designer</span>
-                                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature</p>
-                                    <div class="team_social">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- BEGAIN SINGLE TEAM SLIDE#7 -->
-                            <div class="col-lg-3 col-md-3 col-sm-4">
-                                <div class="single_team wow fadeInUp">
-                                    <div class="team_img">
-                                        <img src="img/team-1.jpg" alt="img">
-                                    </div>
-                                    <h5>Jone Doe</h5>
-                                    <span>Marketing Head</span>
-                                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature</p>
-                                    <div class="team_social">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--=========== END TEAM SECTION ================-->
-
-
-    <!-- Portfolio -->
-    
-
-
-    <!--=========== END profolio SECTION ================-->
-
-
-    <!--=========== BEGAIN BLOG SECTION ================-->
-    <section id="blog">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12">
-                    <!-- START BLOG HEADING -->
-                    <div class="heading">
-                        <h2 class="wow fadeInLeftBig">Latest News From Blog</h2>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
-                    </div>
-                </div>
-                <div class="col-lg-12 col-md-12">
-                    <!-- BEGAIN BLOG CONTENT -->
-                    <div class="blog_content">
-
-                        <!-- BEGAIN BLOG SLIDER -->
-                        <div class="blog_slider">
-                            <!-- BEGAIN SINGLE BLOG -->
-                            <div class="col-lg-4 col-md-4 col-sm-4">
-                                <div class="single_post wow fadeInUp">
-                                    <div class="blog_img">
-                                        <img src="img/blog_img1.jpg" alt="img">
-                                    </div>
-                                    <h3>Sed ut perspiciatis unde omnis</h3>
-                                    <div class="post_commentbox">
-                                        <a href="#"><i class="fa fa-user"></i>Wpfreeware</a>
-                                        <span><i class="fa fa-calendar"></i>6:49 AM</span>
-                                        <a href="#"><i class="fa fa-tags"></i>Technology</a>
-                                    </div>
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</p>
-                                    <a href="#" class="read_more">Read More <i class="fa fa-angle-double-right">  </i></a>
-                                </div>
-                            </div>
-
-                            <!-- BEGAIN SINGLE BLOG -->
-                            <div class="col-lg-4 col-md-4 col-sm-4">
-                                <div class="single_post wow fadeInUp">
-                                    <div class="blog_img">
-                                        <img src="img/blog_img1.jpg" alt="img">
-                                    </div>
-                                    <h3>Sed ut perspiciatis unde omnis</h3>
-                                    <div class="post_commentbox">
-                                        <a href="#"><i class="fa fa-user"></i>Wpfreeware</a>
-                                        <span><i class="fa fa-calendar"></i>6:49 AM</span>
-                                        <a href="#"><i class="fa fa-tags"></i>Technology</a>
-                                    </div>
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</p>
-                                    <a href="#" class="read_more">Read More <i class="fa fa-angle-double-right">  </i></a>
-                                </div>
-                            </div>
-                            <!-- BEGAIN SINGLE BLOG -->
-                            <div class="col-lg-4 col-md-4 col-sm-4">
-                                <div class="single_post wow fadeInUp">
-                                    <div class="blog_img">
-                                        <img src="img/blog_img1.jpg" alt="img">
-                                    </div>
-                                    <h3>Sed ut perspiciatis unde omnis</h3>
-                                    <div class="post_commentbox">
-                                        <a href="#"><i class="fa fa-user"></i>Wpfreeware</a>
-                                        <span><i class="fa fa-calendar"></i>6:49 AM</span>
-                                        <a href="#"><i class="fa fa-tags"></i>Technology</a>
-                                    </div>
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</p>
-                                    <a href="#" class="read_more">Read More <i class="fa fa-angle-double-right">  </i></a>
-                                </div>
-                            </div>
-                            <!-- BEGAIN SINGLE BLOG -->
-                            <div class="col-lg-4 col-md-4 col-sm-4">
-                                <div class="single_post wow fadeInUp">
-                                    <div class="blog_img">
-                                        <img src="img/blog_img1.jpg" alt="img">
-                                    </div>
-                                    <h3>Sed ut perspiciatis unde omnis</h3>
-                                    <div class="post_commentbox">
-                                        <a href="#"><i class="fa fa-user"></i>Wpfreeware</a>
-                                        <span><i class="fa fa-calendar"></i>6:49 AM</span>
-                                        <a href="#"><i class="fa fa-tags"></i>Technology</a>
-                                    </div>
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</p>
-                                    <a href="#" class="read_more">Read More <i class="fa fa-angle-double-right">  </i></a>
-                                </div>
-                            </div>
-                            <!-- BEGAIN SINGLE BLOG -->
-                            <div class="col-lg-4 col-md-4 col-sm-4">
-                                <div class="single_post wow fadeInUp">
-                                    <div class="blog_img">
-                                        <img src="img/blog_img1.jpg" alt="img">
-                                    </div>
-                                    <h3>Sed ut perspiciatis unde omnis</h3>
-                                    <div class="post_commentbox">
-                                        <a href="#"><i class="fa fa-user"></i>Wpfreeware</a>
-                                        <span><i class="fa fa-calendar"></i>6:49 AM</span>
-                                        <a href="#"><i class="fa fa-tags"></i>Technology</a>
-                                    </div>
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</p>
-                                    <a href="#" class="read_more">Read More <i class="fa fa-angle-double-right">  </i></a>
-                                </div>
-                            </div>
-                            <!-- BEGAIN SINGLE BLOG -->
-                            <div class="col-lg-4 col-md-4 col-sm-4">
-                                <div class="single_post wow fadeInUp">
-                                    <div class="blog_img">
-                                        <img src="img/blog_img1.jpg" alt="img">
-                                    </div>
-                                    <h3>Sed ut perspiciatis unde omnis</h3>
-                                    <div class="post_commentbox">
-                                        <a href="#"><i class="fa fa-user"></i>Wpfreeware</a>
-                                        <span><i class="fa fa-calendar"></i>6:49 AM</span>
-                                        <a href="#"><i class="fa fa-tags"></i>Technology</a>
-                                    </div>
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</p>
-                                    <a href="#" class="read_more">Read More <i class="fa fa-angle-double-right">  </i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--=========== END BLOG SECTION ================-->
-
-
-    <!--=========== BEGAIN TESTIMONIAL SECTION ================-->
-    <section id="testimonial">
-        <div class="container">
-            <div class="row">
-                <div class=" col-lg-7 col-md-7 col-sm-6">
-                    <!-- START BLOG HEADING -->
-                    <div class="heading">
-                        <h2 class="wow fadeInLeftBig">Satisfied Customers</h2>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
-                    </div>
-                </div>
-                <div class=" col-lg-5 col-md-5 col-sm-6">
-                    <div class="testimonial_customer">
-                        <!-- BEGAIN TESTIMONIAL SLIDER -->
-                        <ul class="testimonial_slider">
-                            <!-- BEGAIN SINGLE TESTIMONIAL SLIDE#1 -->
-                            <li>
-                                <div class="media testi_media">
-                                    <a class="media-left testi_img" href="#">
-                                        <img src="img/team-1.jpg" alt="img">
-                                    </a>
-                                    <div class="media-body">
-                                        <h4 class="media-heading">Alin Brown</h4>
-                                        <span>CEO</span>
-                                    </div>
-                                </div>
-                                <div class="testi_content">
-                                    <p>Message of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
-                                </div>
-                            </li>
-                            <!-- BEGAIN SINGLE TESTIMONIAL SLIDE#2 -->
-                            <li>
-                                <div class="media testi_media">
-                                    <a class="media-left testi_img" href="#">
-                                        <img src="img/team-1.jpg" alt="img">
-                                    </a>
-                                    <div class="media-body">
-                                        <h4 class="media-heading">Jon Smith</h4>
-                                        <span>CEO</span>
-                                    </div>
-                                </div>
-                                <div class="testi_content">
-                                    <p>Message of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
-                                </div>
-                            </li>
-                            <!-- BEGAIN SINGLE TESTIMONIAL SLIDE#3 -->
-                            <li>
-                                <div class="media testi_media">
-                                    <a class="media-left testi_img" href="#">
-                                        <img src="img/team-1.jpg" alt="img">
-                                    </a>
-                                    <div class="media-body">
-                                        <h4 class="media-heading">Jon Doe</h4>
+                                <!-- BEGAIN SINGLE TEAM SLIDE#3 -->
+                                <div class="col-lg-3 col-md-3 col-sm-4">
+                                    <div class="single_team wow fadeInUp">
+                                        <div class="team_img">
+                                            <img src="img/team-1.jpg" alt="img">
+                                        </div>
+                                        <h5>Jamie Sidens</h5>
                                         <span>Manager</span>
+                                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in
+                                            a piece of classical Latin literature</p>
+                                        <div class="team_social">
+                                            <a href="#"><i class="fa fa-facebook"></i></a>
+                                            <a href="#"><i class="fa fa-twitter"></i></a>
+                                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="testi_content">
-                                    <p>Message of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                                <!-- BEGAIN SINGLE TEAM SLIDE#4 -->
+                                <div class="col-lg-3 col-md-3 col-sm-4">
+                                    <div class="single_team wow fadeInUp">
+                                        <div class="team_img">
+                                            <img src="img/team-1.jpg" alt="img">
+                                        </div>
+                                        <h5>Jamie Sidens</h5>
+                                        <span>Developer</span>
+                                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in
+                                            a piece of classical Latin literature</p>
+                                        <div class="team_social">
+                                            <a href="#"><i class="fa fa-facebook"></i></a>
+                                            <a href="#"><i class="fa fa-twitter"></i></a>
+                                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                                        </div>
+                                    </div>
                                 </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--=========== END TESTIMONIAL SECTION ================-->
-
-
-    <!--=========== BEGAIN CLIENTS SECTION ================-->
-    <section id="clients">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12">
-                    <!-- START BLOG HEADING -->
-                    <div class="heading">
-                        <h2 class="wow fadeInLeftBig">團友回應</h2>
-                        <p>過往的旅行團中，我們獲得了不少團友正面的回應。 </p>
-                    </div>
-                </div>
-                <div class="col-lg-12 col-md-12 col-sm-12">
-                    <div class="clients_content">
-                        <div class="row">
-
-                            <div> <img alt="Word Cloud" src="img/wordcloud.jpg" usemap="#wordCloudMap"></div>
-
+                                <!-- BEGAIN SINGLE TEAM SLIDE#5 -->
+                                <div class="col-lg-3 col-md-3 col-sm-4">
+                                    <div class="single_team wow fadeInUp">
+                                        <div class="team_img">
+                                            <img src="img/team-1.jpg" alt="img">
+                                        </div>
+                                        <h5>Jamie Sidens</h5>
+                                        <span>Programmer</span>
+                                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in
+                                            a piece of classical Latin literature</p>
+                                        <div class="team_social">
+                                            <a href="#"><i class="fa fa-facebook"></i></a>
+                                            <a href="#"><i class="fa fa-twitter"></i></a>
+                                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- BEGAIN SINGLE TEAM SLIDE#6 -->
+                                <div class="col-lg-3 col-md-3 col-sm-4">
+                                    <div class="single_team wow fadeInUp">
+                                        <div class="team_img">
+                                            <img src="img/team-1.jpg" alt="img">
+                                        </div>
+                                        <h5>Jamie Sidens</h5>
+                                        <span>Web Designer</span>
+                                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in
+                                            a piece of classical Latin literature</p>
+                                        <div class="team_social">
+                                            <a href="#"><i class="fa fa-facebook"></i></a>
+                                            <a href="#"><i class="fa fa-twitter"></i></a>
+                                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- BEGAIN SINGLE TEAM SLIDE#7 -->
+                                <div class="col-lg-3 col-md-3 col-sm-4">
+                                    <div class="single_team wow fadeInUp">
+                                        <div class="team_img">
+                                            <img src="img/team-1.jpg" alt="img">
+                                        </div>
+                                        <h5>Jone Doe</h5>
+                                        <span>Marketing Head</span>
+                                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in
+                                            a piece of classical Latin literature</p>
+                                        <div class="team_social">
+                                            <a href="#"><i class="fa fa-facebook"></i></a>
+                                            <a href="#"><i class="fa fa-twitter"></i></a>
+                                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        </div>
-        <map name="wordCloudMap">
+        </section>
+        <!--=========== END TEAM SECTION ================-->
+
+
+        <!-- Portfolio -->
+
+
+
+        <!--=========== END profolio SECTION ================-->
+
+
+        <!--=========== BEGAIN BLOG SECTION ================-->
+        <section id="blog">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <!-- START BLOG HEADING -->
+                        <div class="heading">
+                            <h2 class="wow fadeInLeftBig">Latest News From Blog</h2>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                                alteration in some form, by injected humour, or randomised words which don't look even slightly
+                                believable.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <!-- BEGAIN BLOG CONTENT -->
+                        <div class="blog_content">
+
+                            <!-- BEGAIN BLOG SLIDER -->
+                            <div class="blog_slider">
+                                <!-- BEGAIN SINGLE BLOG -->
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <div class="single_post wow fadeInUp">
+                                        <div class="blog_img">
+                                            <img src="img/blog_img1.jpg" alt="img">
+                                        </div>
+                                        <h3>Sed ut perspiciatis unde omnis</h3>
+                                        <div class="post_commentbox">
+                                            <a href="#"><i class="fa fa-user"></i>Wpfreeware</a>
+                                            <span><i class="fa fa-calendar"></i>6:49 AM</span>
+                                            <a href="#"><i class="fa fa-tags"></i>Technology</a>
+                                        </div>
+                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                            laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et
+                                            quasi architecto beatae vitae dicta sunt explicabo</p>
+                                        <a href="#" class="read_more">Read More <i class="fa fa-angle-double-right">  </i></a>
+                                    </div>
+                                </div>
+
+                                <!-- BEGAIN SINGLE BLOG -->
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <div class="single_post wow fadeInUp">
+                                        <div class="blog_img">
+                                            <img src="img/blog_img1.jpg" alt="img">
+                                        </div>
+                                        <h3>Sed ut perspiciatis unde omnis</h3>
+                                        <div class="post_commentbox">
+                                            <a href="#"><i class="fa fa-user"></i>Wpfreeware</a>
+                                            <span><i class="fa fa-calendar"></i>6:49 AM</span>
+                                            <a href="#"><i class="fa fa-tags"></i>Technology</a>
+                                        </div>
+                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                            laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et
+                                            quasi architecto beatae vitae dicta sunt explicabo</p>
+                                        <a href="#" class="read_more">Read More <i class="fa fa-angle-double-right">  </i></a>
+                                    </div>
+                                </div>
+                                <!-- BEGAIN SINGLE BLOG -->
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <div class="single_post wow fadeInUp">
+                                        <div class="blog_img">
+                                            <img src="img/blog_img1.jpg" alt="img">
+                                        </div>
+                                        <h3>Sed ut perspiciatis unde omnis</h3>
+                                        <div class="post_commentbox">
+                                            <a href="#"><i class="fa fa-user"></i>Wpfreeware</a>
+                                            <span><i class="fa fa-calendar"></i>6:49 AM</span>
+                                            <a href="#"><i class="fa fa-tags"></i>Technology</a>
+                                        </div>
+                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                            laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et
+                                            quasi architecto beatae vitae dicta sunt explicabo</p>
+                                        <a href="#" class="read_more">Read More <i class="fa fa-angle-double-right">  </i></a>
+                                    </div>
+                                </div>
+                                <!-- BEGAIN SINGLE BLOG -->
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <div class="single_post wow fadeInUp">
+                                        <div class="blog_img">
+                                            <img src="img/blog_img1.jpg" alt="img">
+                                        </div>
+                                        <h3>Sed ut perspiciatis unde omnis</h3>
+                                        <div class="post_commentbox">
+                                            <a href="#"><i class="fa fa-user"></i>Wpfreeware</a>
+                                            <span><i class="fa fa-calendar"></i>6:49 AM</span>
+                                            <a href="#"><i class="fa fa-tags"></i>Technology</a>
+                                        </div>
+                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                            laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et
+                                            quasi architecto beatae vitae dicta sunt explicabo</p>
+                                        <a href="#" class="read_more">Read More <i class="fa fa-angle-double-right">  </i></a>
+                                    </div>
+                                </div>
+                                <!-- BEGAIN SINGLE BLOG -->
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <div class="single_post wow fadeInUp">
+                                        <div class="blog_img">
+                                            <img src="img/blog_img1.jpg" alt="img">
+                                        </div>
+                                        <h3>Sed ut perspiciatis unde omnis</h3>
+                                        <div class="post_commentbox">
+                                            <a href="#"><i class="fa fa-user"></i>Wpfreeware</a>
+                                            <span><i class="fa fa-calendar"></i>6:49 AM</span>
+                                            <a href="#"><i class="fa fa-tags"></i>Technology</a>
+                                        </div>
+                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                            laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et
+                                            quasi architecto beatae vitae dicta sunt explicabo</p>
+                                        <a href="#" class="read_more">Read More <i class="fa fa-angle-double-right">  </i></a>
+                                    </div>
+                                </div>
+                                <!-- BEGAIN SINGLE BLOG -->
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <div class="single_post wow fadeInUp">
+                                        <div class="blog_img">
+                                            <img src="img/blog_img1.jpg" alt="img">
+                                        </div>
+                                        <h3>Sed ut perspiciatis unde omnis</h3>
+                                        <div class="post_commentbox">
+                                            <a href="#"><i class="fa fa-user"></i>Wpfreeware</a>
+                                            <span><i class="fa fa-calendar"></i>6:49 AM</span>
+                                            <a href="#"><i class="fa fa-tags"></i>Technology</a>
+                                        </div>
+                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                            laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et
+                                            quasi architecto beatae vitae dicta sunt explicabo</p>
+                                        <a href="#" class="read_more">Read More <i class="fa fa-angle-double-right">  </i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--=========== END BLOG SECTION ================-->
+
+
+        <!--=========== BEGAIN TESTIMONIAL SECTION ================-->
+        <section id="testimonial">
+            <div class="container">
+                <div class="row">
+                    <div class=" col-lg-7 col-md-7 col-sm-6">
+                        <!-- START BLOG HEADING -->
+                        <div class="heading">
+                            <h2 class="wow fadeInLeftBig">Satisfied Customers</h2>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                                alteration in some form, by injected humour, or randomised words which don't look even slightly
+                                believable.
+                            </p>
+                        </div>
+                    </div>
+                    <div class=" col-lg-5 col-md-5 col-sm-6">
+                        <div class="testimonial_customer">
+                            <!-- BEGAIN TESTIMONIAL SLIDER -->
+                            <ul class="testimonial_slider">
+                                <!-- BEGAIN SINGLE TESTIMONIAL SLIDE#1 -->
+                                <li>
+                                    <div class="media testi_media">
+                                        <a class="media-left testi_img" href="#">
+                                            <img src="img/team-1.jpg" alt="img">
+                                        </a>
+                                        <div class="media-body">
+                                            <h4 class="media-heading">Alin Brown</h4>
+                                            <span>CEO</span>
+                                        </div>
+                                    </div>
+                                    <div class="testi_content">
+                                        <p>Message of Lorem Ipsum available, but the majority have suffered alteration in some
+                                            form, by injected humour, or randomised words which don't look even slightly
+                                            believable
+                                        </p>
+                                    </div>
+                                </li>
+                                <!-- BEGAIN SINGLE TESTIMONIAL SLIDE#2 -->
+                                <li>
+                                    <div class="media testi_media">
+                                        <a class="media-left testi_img" href="#">
+                                            <img src="img/team-1.jpg" alt="img">
+                                        </a>
+                                        <div class="media-body">
+                                            <h4 class="media-heading">Jon Smith</h4>
+                                            <span>CEO</span>
+                                        </div>
+                                    </div>
+                                    <div class="testi_content">
+                                        <p>Message of Lorem Ipsum available, but the majority have suffered alteration in some
+                                            form.
+                                        </p>
+                                    </div>
+                                </li>
+                                <!-- BEGAIN SINGLE TESTIMONIAL SLIDE#3 -->
+                                <li>
+                                    <div class="media testi_media">
+                                        <a class="media-left testi_img" href="#">
+                                            <img src="img/team-1.jpg" alt="img">
+                                        </a>
+                                        <div class="media-body">
+                                            <h4 class="media-heading">Jon Doe</h4>
+                                            <span>Manager</span>
+                                        </div>
+                                    </div>
+                                    <div class="testi_content">
+                                        <p>Message of Lorem Ipsum available, but the majority have suffered alteration in some
+                                            form, by injected humour, or randomised words which don't look even slightly
+                                            believable.
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--=========== END TESTIMONIAL SECTION ================-->
+
+
+        <!--=========== BEGAIN CLIENTS SECTION ================-->
+        <section id="clients">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <!-- START BLOG HEADING -->
+                        <div class="heading">
+                            <h2 class="wow fadeInLeftBig">團友回應</h2>
+                            <p>過往的旅行團中，我們獲得了不少團友正面的回應。 </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="clients_content">
+                            <div class="row">
+
+                                <div> <img alt="Word Cloud" src="img/wordcloud.jpg" usemap="#wordCloudMap"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <map name="wordCloudMap">
 <area shape="rect" alt="32" href="https://www.facebook.com/apple.lo/posts/10211654078012426:0" coords="456,232,488,248" target="wordcloud">
 <area shape="rect" alt="32" href="https://www.facebook.com/him.chan.79/posts/10154763248848949:0" coords="424,272,456,288" target="wordcloud">
 <area shape="rect" alt="60" href="https://www.facebook.com/yukiyukiyukihui/posts/10154829661588622:0" coords="408,136,468,152" target="wordcloud">
@@ -1453,7 +1178,9 @@
                     <!-- START CONTACT HEADING -->
                     <div class="heading">
                         <h2 class="wow fadeInLeftBig">Contact Us</h2>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
+                            in some form, by injected humour, or randomised words which don't look even slightly believable.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -1544,7 +1271,9 @@
                     <!-- START SUBSCRIBE HEADING -->
                     <div class="heading">
                         <h2 class="wow fadeInLeftBig">Subscribe Us</h2>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
+                            in some form, by injected humour, or randomised words which don't look even slightly believable.
+                        </p>
                     </div>
                     <!-- BEGAIN SUBSCRIVE FORM -->
                     <form class="subscribe_form">
@@ -1608,6 +1337,7 @@
     <script src="js/classie.js"></script>
     <script src="js/elastic_grid.min.js"></script>
     <script src="js/portfolio_slider.js"></script>
+    <script src="js/chart.js"></script>
 
     <!-- Custom js-->
     <script src="js/custom.js"></script>
