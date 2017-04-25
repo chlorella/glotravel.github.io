@@ -42,7 +42,6 @@
 .service_icon{
 	background-color: #EF4836;
 }
-
 .single_service:hover .service_icon{	
 	color: #EF4836;
 	border: 2px solid #EF4836;
@@ -136,4 +135,7 @@
 }
 .about_slider .slick-dots li.slick-active button:before {
   color: #EF4836;
+}
+.counter_area label{
+  color: #fff;
 }

@@ -91,3 +91,197 @@ var option = {
 
 var myChart = echarts.init(document.getElementById('main'));
 myChart.setOption(option);
+
+var myChart = echarts.init(document.getElementById('main2'));
+
+var option = {
+    title: {
+        text: '性別與年齡分布',
+    },
+    color: ['#B2232B', '#262996'],
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'shadow'
+        }
+    },
+    legend: {
+        data: ['女', '男']
+    },
+    grid: {
+        left: '5%',
+        right: '5%',
+        bottom: '5%',
+        containLabel: true
+    },
+    xAxis: {
+        type: 'value'
+    },
+    yAxis: {
+        type: 'category',
+        data: ['81-90歲', '71-80歲', '61-70歲', '51-60歲', '41-50歲', '31-40歲', '21-30歲', '11-20歲'
+        ]
+    },
+    series: [
+        {
+            name: '女',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'insideRight'
+                }
+            },
+            data: [1, 0, 3, 4, 8, 32, 40, 0]
+        },
+        {
+            name: '男',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'insideRight'
+                }
+            },
+            data: [0, 1, 2, 5, 10, 40, 45, 1]
+        },
+    ]
+};
+myChart.setOption(option);
+
+var myChart = echarts.init(document.getElementById('main3'));
+
+var option = {
+    title: {
+        text: '職業分布',
+    },
+    tooltip: {
+        trigger: 'item',
+        formatter: "{a} <br/>{b}: {c} ({d}%)"
+    },
+    legend: {
+        orient: 'vertical',
+        x: 'right',
+        data: ['學生', '無業', '退休', '政府部門', '紀律部隊', '慈善機構', '金融/銀行/投資', '商業部門/顧問', '互聯網公司', '航空', '工程/軟件開發', '廣告', '教育', '出版', '其他']
+    },
+    series: [
+        {
+            name: '行業',
+            type: 'pie',
+            radius: ['50%', '70%'],
+            avoidLabelOverlap: false,
+            label: {
+                normal: {
+                    show: false,
+                    position: 'center'
+                },
+                emphasis: {
+                    show: true,
+                    textStyle: {
+                        fontSize: '50',
+                        fontWeight: 'bold'
+                    }
+                }
+            },
+            labelLine: {
+                normal: {
+                    show: false
+                }
+            },
+            data: [
+                { value: 29, name: '學生' },
+                { value: 13, name: '無業' },
+                { value: 7, name: '退休' },
+                { value: 6, name: '政府部門' },
+                { value: 2, name: '紀律部隊' },
+                { value: 10, name: '醫院/醫療部門' },
+                { value: 3, name: '慈善機構' },
+                { value: 17, name: '金融/銀行/投資' },
+                { value: 57, name: '商業部門/顧問' },
+                { value: 8, name: '互聯網公司' },
+                { value: 5, name: '航空' },
+                { value: 13, name: '工程/軟件開發' },
+                { value: 13, name: '廣告' },
+                { value: 3, name: '教育' },
+                { value: 3, name: '出版' },
+                { value: 3, name: '其他' }
+            ]
+        }
+    ]
+};
+
+myChart.setOption(option);
+
+var myChart = echarts.init(document.getElementById('main4'));
+
+var option = {
+    title: {
+        text: '到訪北韓月份分布',
+    },
+    color: ['#A11FFF', '#16E042', '#FFA322'],
+    tooltip: {
+        trigger: 'axis'
+    },
+    legend: {
+        data: ['2015年', '2016年', '2017年']
+    },
+    toolbox: {
+        show: true,
+        feature: {
+            dataZoom: {
+                yAxisIndex: 'none'
+            },
+            dataView: { readOnly: false },
+            magicType: { type: ['line', 'bar'] },
+            restore: {},
+            saveAsImage: {}
+        }
+    },
+    xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
+    },
+    yAxis: {
+        type: 'value',
+        axisLabel: {
+            formatter: '{value}人'
+        }
+    },
+    series: [
+        {
+            name: '2015年',
+            type: 'line',
+            data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0],
+            markPoint: {
+                data: [
+                    { type: 'max', name: '最大值' }
+                ]
+            },
+        },
+        {
+            name: '2016年',
+            type: 'line',
+            data: [0, 0, 9, 0, 7, 0, 22, 15, 10, 23, 0, 12],
+            markPoint: {
+                data: [
+                    { type: 'max', name: '最大值' }
+                ]
+            },
+        },
+        {
+            name: '2017年',
+            type: 'line',
+            data: [10, 0, 0, 80, 0, 0, 0, 0, 0, 0, 0, 0],
+            markPoint: {
+                data: [
+                    { type: 'max', name: '最大值' },
+                ]
+            },
+        }
+    ]
+};
+
+myChart.setOption(option);
