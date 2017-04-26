@@ -1091,7 +1091,7 @@ div[data-dimension] {
 	float: left;
 	display: inline;
 	width: 100%;
-	margin-top: 30px;	
+	margin-top: 30px;
 }
 .clients_slider{
 	float: left;
@@ -1356,6 +1356,7 @@ textarea .form-control {
 	float: left;
 	display: inline;
 	width: 100%;
+  text-align: right;
 }
 .social_nav{
 	text-align: right;	
