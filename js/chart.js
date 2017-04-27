@@ -1,8 +1,11 @@
 var option1 = {
+    title: {
+        text: '北韓收入來源',
+    },
     tooltip: {},
     legend: {
         data: ['北韓收支'],
-        textStyle: { color: '#000000' }
+        textStyle: { color: '#ffffff' }
     },
     xAxis: [{
         data: ['軍事經費', '旅遊業收入', '煤礦出口收入'],
@@ -96,9 +99,9 @@ var chart2 = echarts.init(document.getElementById('main2'));
 
 var option2 = {
     title: {
-        text: '性別與年齡分布',
+        text: '參加者性別與年齡分布',
     },
-    color: ['#B2232B', '#262996'],
+    color: ['#262996','#B2232B'],
     tooltip: {
         trigger: 'axis',
         axisPointer: {
@@ -106,7 +109,7 @@ var option2 = {
         }
     },
     legend: {
-        data: ['女', '男']
+        data: ['男','女']
     },
     grid: {
         left: '5%',
@@ -124,18 +127,6 @@ var option2 = {
     },
     series: [
         {
-            name: '女',
-            type: 'bar',
-            stack: '总量',
-            label: {
-                normal: {
-                    show: true,
-                    position: 'insideRight'
-                }
-            },
-            data: [1, 0, 3, 4, 8, 32, 40, 0]
-        },
-        {
             name: '男',
             type: 'bar',
             stack: '总量',
@@ -147,6 +138,18 @@ var option2 = {
             },
             data: [0, 1, 2, 5, 10, 40, 45, 1]
         },
+        {
+            name: '女',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'insideRight'
+                }
+            },
+            data: [1, 0, 3, 4, 8, 32, 40, 0]
+        },
     ]
 };
 chart2.setOption(option2);
@@ -155,7 +158,7 @@ var chart3 = echarts.init(document.getElementById('main3'));
 
 var option3 = {
     title: {
-        text: '職業分布',
+        text: '參加者職業分布',
     },
     tooltip: {
         trigger: 'item',
@@ -168,7 +171,7 @@ var option3 = {
     },
     series: [
         {
-            name: '行業',
+            name: '職業',
             type: 'pie',
             radius: ['50%', '70%'],
             avoidLabelOverlap: false,
