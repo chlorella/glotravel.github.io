@@ -1,4 +1,4 @@
-var option = {
+var option1 = {
     tooltip: {},
     legend: {
         data: ['北韓收支'],
@@ -89,12 +89,12 @@ var option = {
     }]
 };
 
-var myChart = echarts.init(document.getElementById('main'));
-myChart.setOption(option);
+var chart1 = echarts.init(document.getElementById('main'));
+chart1.setOption(option1);
 
-var myChart = echarts.init(document.getElementById('main2'));
+var chart2 = echarts.init(document.getElementById('main2'));
 
-var option = {
+var option2 = {
     title: {
         text: '性別與年齡分布',
     },
@@ -149,11 +149,11 @@ var option = {
         },
     ]
 };
-myChart.setOption(option);
+chart2.setOption(option2);
 
-var myChart = echarts.init(document.getElementById('main3'));
+var chart3 = echarts.init(document.getElementById('main3'));
 
-var option = {
+var option3 = {
     title: {
         text: '職業分布',
     },
@@ -212,11 +212,11 @@ var option = {
     ]
 };
 
-myChart.setOption(option);
+chart3.setOption(option3);
 
-var myChart = echarts.init(document.getElementById('main4'));
+var chart4 = echarts.init(document.getElementById('main4'));
 
-var option = {
+var option4 = {
     title: {
         text: '到訪北韓月份分布',
     },
@@ -284,4 +284,6 @@ var option = {
     ]
 };
 
-myChart.setOption(option);
+chart4.setOption(option4);
+
+window.addEventListener("resize", () => { this.chart1.resize();  this.chart2.resize();  this.chart3.resize();  chart4.resize();});

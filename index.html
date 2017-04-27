@@ -297,7 +297,7 @@
                             <div class="heading">
                                 <h3 class="wow fadeInDown">旅遊＝資助北韓核計劃?</h3>
                             </div>
-                            <div class="col-lg-12 col-md-12" >
+                            <div class="col-lg-12 col-md-12">
                                 <div class="container" id="main" style="width:100%; height:600px;"></div>
                             </div>
                         </div>
@@ -650,7 +650,7 @@
                                 <p>到訪北韓的人不受年齡限制，未成年的青年及年逾七旬的長者，也想一窺北韓真正面貌。</p>
                             </div>
                             <div class="col-lg-8 col-md-12 col-sm-12">
-                                <div id="main2" style="width: 100%;height:600px;"></div>
+                                <div class="" id="main2" style="width: 100%;height:600px;"></div>
                             </div>
                         </div>
                         <!-- END customer: gender and age-->
@@ -790,14 +790,14 @@
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="clients_content">
                         <div class="row">
-                            <div> <img alt="Word Cloud" src="img/wordcloud.jpg" usemap="#wordCloudMap"></div>
+                            <div> <img name="map" alt="Word Cloud" src="img/wordcloud.jpg" usemap="#m_wordCloudMap" width="100%"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         </div>
-        <map name="wordCloudMap">
+        <map name="m_wordCloudMap">
 <area shape="rect" alt="32" href="https://www.facebook.com/apple.lo/posts/10211654078012426:0" coords="456,232,488,248" target="wordcloud">
 <area shape="rect" alt="32" href="https://www.facebook.com/him.chan.79/posts/10154763248848949:0" coords="424,272,456,288" target="wordcloud">
 <area shape="rect" alt="60" href="https://www.facebook.com/yukiyukiyukihui/posts/10154829661588622:0" coords="408,136,468,152" target="wordcloud">
@@ -975,11 +975,15 @@
     <script src="js/elastic_grid.min.js"></script>
     <script src="js/portfolio_slider.js"></script>
     <script src="js/chart.js"></script>
-
+    <script src="js/imageMapResizer.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.0/bootstrap-slider.min.js"></script>
     <!-- Custom js-->
-    <script src="js/custom.js"></script>
+    <script src="js/custom.js" type="text/javascript"></script>
     <script>
-        $("#r_q2").slider({});
+        $(document).ready(function () {
+            $("#r_q2").slider({});
+            $('map').imageMapResize();
+        });
     </script>
 </body>
 
