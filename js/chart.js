@@ -1,4 +1,6 @@
 var option1 = {
+    responsive: true,
+    maintainAspectRatio: true,
     title: {
         text: '北韓收入來源',
     },
@@ -94,10 +96,13 @@ var option1 = {
 
 var chart1 = echarts.init(document.getElementById('main'));
 chart1.setOption(option1);
+chart1.width = "600px";
 
 var chart2 = echarts.init(document.getElementById('main2'));
 
 var option2 = {
+    responsive: true,
+    maintainAspectRatio: true,
     title: {
         text: '參加者性別與年齡分布',
     },
@@ -153,10 +158,13 @@ var option2 = {
     ]
 };
 chart2.setOption(option2);
+chart2.width = "600px";
 
 var chart3 = echarts.init(document.getElementById('main3'));
 
 var option3 = {
+    responsive: true,
+    maintainAspectRatio: true,
     title: {
         text: '參加者職業分布',
     },
@@ -216,10 +224,13 @@ var option3 = {
 };
 
 chart3.setOption(option3);
+chart3.width = "600px";
 
 var chart4 = echarts.init(document.getElementById('main4'));
 
 var option4 = {
+    responsive: true,
+    maintainAspectRatio: true,
     title: {
         text: '到訪北韓月份分布',
     },
@@ -288,5 +299,6 @@ var option4 = {
 };
 
 chart4.setOption(option4);
+chart4.width = "600px";
 
 window.addEventListener("resize", () => { this.chart1.resize();  this.chart2.resize();  this.chart3.resize();  chart4.resize();});
