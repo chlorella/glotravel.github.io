@@ -644,7 +644,7 @@
             <div class="portfolio_area">
                 <!-- BEGAIN PORTFOLIO HEADER -->
                 <div class="row">
-                    <div>
+                    <div class="col-lg-12 col-md-12">
                         <div class="container">
                             <div class="heading">
                                 <h2 class="wow fadeInLeftBig">建議行程</h2>
@@ -776,7 +776,174 @@
                                 <!-- START customer: map-->
                                 <div class="col-lg-12 col-md-12">
                                     <div class="col-lg-8 col-md-12">
-                                        <div id="main5" style="width: 100%;height:600px;"></div>
+                                        <div id="main5" style="width: 100%;height:600px;">
+                                            <script src="echarts.js"></script>
+                                            <script src="js/world.js"></script>
+                                            <script>
+                                                var chart5 = echarts.init(document.getElementById('main5'));
+                                                var latlong = {};
+                                                latlong.CN = {
+                                                    'latitude': 35,
+                                                    'longitude': 105
+                                                };
+                                                latlong.DE = {
+                                                    'latitude': 51,
+                                                    'longitude': 9
+                                                };
+                                                latlong.JP = {
+                                                    'latitude': 36,
+                                                    'longitude': 138
+                                                };
+                                                latlong.MC = {
+                                                    'latitude': 22.19,
+                                                    'longitude': 113.54
+                                                };
+                                                latlong.TW = {
+                                                    'latitude': 23.5,
+                                                    'longitude': 121
+                                                };
+                                                latlong.GB = {
+                                                    'latitude': 54,
+                                                    'longitude': -2
+                                                };
+                                                latlong.US = {
+                                                    'latitude': 38,
+                                                    'longitude': -97
+                                                };
+                                                latlong.HK = {
+                                                    'latitude': 22.25,
+                                                    'longitude': 114.1667
+                                                };
+
+                                                var mapData = [{
+                                                    'code': 'CN',
+                                                    'name': '中國',
+                                                    'value': 1,
+                                                    'color': '#FFD213'
+                                                }, {
+                                                    'code': 'DE',
+                                                    'name': '德國',
+                                                    'value': 1,
+                                                    'color': '#FFD213'
+                                                }, {
+                                                    'code': 'JP',
+                                                    'name': '日本',
+                                                    'value': 1,
+                                                    'color': '#FFD213'
+                                                }, {
+                                                    'code': 'MC',
+                                                    'name': '澳門',
+                                                    'value': 4,
+                                                    'color': '#FFD213'
+                                                }, {
+                                                    'code': 'TW',
+                                                    'name': '台灣',
+                                                    'value': 7,
+                                                    'color': '#FFD213'
+                                                }, {
+                                                    'code': 'GB',
+                                                    'name': '英國',
+                                                    'value': 2,
+                                                    'color': '#FFD213'
+                                                }, {
+                                                    'code': 'US',
+                                                    'name': '美國',
+                                                    'value': 1,
+                                                    'color': '#FFD213'
+                                                }, {
+                                                    'code': 'HK',
+                                                    'name': '香港',
+                                                    'value': 175,
+                                                    'color': '#FFD213'
+                                                }];
+
+                                                var max = -Infinity;
+                                                var min = Infinity;
+                                                mapData.forEach(function(itemOpt) {
+                                                    if (itemOpt.value > max) {
+                                                        max = itemOpt.value;
+                                                    }
+                                                    if (itemOpt.value < min) {
+                                                        min = itemOpt.value;
+                                                    }
+                                                });
+
+                                                var option5 = {
+                                                    backgroundColor: '#fff',
+                                                    title: {
+                                                        text: '參加者居住地',
+                                                        left: 'center',
+                                                        top: 'top',
+                                                        textStyle: {
+                                                            color: '#000000'
+                                                        }
+                                                    },
+                                                    tooltip: {
+                                                        trigger: 'item',
+                                                        formatter: function(params) {
+                                                            var value = (params.value + '').split('.');
+                                                            value = value[0].replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,') +
+                                                                '.' + value[1];
+                                                            return params.seriesName + '<br/>' + params.name + ' : ' + value + '人';
+                                                        }
+                                                    },
+                                                    visualMap: {
+                                                        show: false,
+                                                        min: 0,
+                                                        max: max,
+                                                        inRange: {
+                                                            symbolSize: [6, 60]
+                                                        }
+                                                    },
+                                                    geo: {
+                                                        name: '參加者居住地',
+                                                        type: 'map',
+                                                        map: 'world',
+                                                        roam: true,
+                                                        label: {
+                                                            emphasis: {
+                                                                show: true
+                                                            }
+                                                        },
+                                                        itemStyle: {
+                                                            normal: {
+                                                                areaColor: '#092B33',
+                                                                borderColor: '#6A7B94'
+                                                            },
+                                                            emphasis: {
+                                                                areaColor: '#2a333d'
+                                                            }
+                                                        }
+                                                    },
+                                                    series: [{
+                                                        type: 'scatter',
+                                                        coordinateSystem: 'geo',
+                                                        data: mapData.map(function(itemOpt) {
+                                                            return {
+                                                                name: itemOpt.name,
+                                                                value: [
+                                                                    latlong[itemOpt.code].longitude,
+                                                                    latlong[itemOpt.code].latitude,
+                                                                    itemOpt.value
+                                                                ],
+                                                                label: {
+                                                                    emphasis: {
+                                                                        position: 'right',
+                                                                        show: true
+                                                                    }
+                                                                },
+                                                                itemStyle: {
+                                                                    normal: {
+                                                                        color: itemOpt.color
+                                                                    }
+                                                                }
+                                                            };
+                                                        })
+                                                    }]
+                                                };
+                                                chart5.setOption(option5);
+                                            </script>
+                                        </div>
                                     </div>
                                     <div class="col-lg-4 col-md-12">
                                         <h3>參加者來自哪裏？</h3>
