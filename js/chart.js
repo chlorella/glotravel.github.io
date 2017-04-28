@@ -2,7 +2,8 @@ var option1 = {
     responsive: true,
     maintainAspectRatio: true,
     title: {
-        text: '北韓收入來源',
+        text: '美金',
+        textStyle: { color: '#ffffff' }
     },
     tooltip: {},
     legend: {
@@ -37,61 +38,62 @@ var option1 = {
     },
     animationEasing: 'elasticOut',
     series: [{
-        type: 'pictorialBar',
-        name: '北韓收支',
-        hoverAnimation: true,
+            type: 'pictorialBar',
+            name: '北韓收支',
+            hoverAnimation: true,
 
-        data: [{
-            value: 4000000000,
-            symbol: 'image://https://upload.wikimedia.org/wikipedia/commons/7/7b/United_States_one_dollar_bill%2C_obverse.jpg',
-            symbolRepeat: true,
-            symbolSize: ['40%', '20%'],
-            symbolOffset: [0, 10],
-            symbolMargin: '-30%',
-            animationDelay: function (dataIndex, params) {
-                return params.index * 30;
-            }
-        }, {
-            value: 43600000,
-            symbol: 'image://https://cdn.pixabay.com/photo/2013/07/13/11/29/camera-158262_960_720.png',
-            symbolSize: ['10%', '100%'],
-            symbolPosition: 'end',
-            z: 10
-        }, {
-            value: 1000000000,
-            symbol: 'image://http://images.clipartpanda.com/coal-clipart-coal_cart_T.png',
-            symbolSize: ['50%', '100%'],
-            symbolPosition: 'end'
-        }],
-        markLine: {
-            symbol: ['none', 'none'],
-            label: {
-                normal: { show: false }
-            },
-            lineStyle: {
-                normal: {
-                    color: '#0099ff',
-                    width: 1
-                }
-            },
             data: [{
-                yAxis: 1000000000
+                value: 4000000000,
+                symbol: 'image://https://upload.wikimedia.org/wikipedia/commons/7/7b/United_States_one_dollar_bill%2C_obverse.jpg',
+                symbolRepeat: true,
+                symbolSize: ['40%', '20%'],
+                symbolOffset: [0, 10],
+                symbolMargin: '-30%',
+                animationDelay: function(dataIndex, params) {
+                    return params.index * 30;
+                }
+            }, {
+                value: 43600000,
+                symbol: 'image://https://cdn.pixabay.com/photo/2013/07/13/11/29/camera-158262_960_720.png',
+                symbolSize: ['10%', '100%'],
+                symbolPosition: 'end',
+                z: 10
+            }, {
+                value: 1000000000,
+                symbol: 'image://http://images.clipartpanda.com/coal-clipart-coal_cart_T.png',
+                symbolSize: ['50%', '100%'],
+                symbolPosition: 'end'
+            }],
+            markLine: {
+                symbol: ['none', 'none'],
+                label: {
+                    normal: { show: false }
+                },
+                lineStyle: {
+                    normal: {
+                        color: '#0099ff',
+                        width: 1
+                    }
+                },
+                data: [{
+                    yAxis: 1000000000
 
-            }]
-        }
-    },
-    {
-        name: '北韓收支',
-        type: 'pictorialBar',
-        barGap: '-100%',
-        symbol: 'circle',
-        itemStyle: {
-            normal: {
-                color: '#185491'
+                }]
             }
         },
+        {
+            name: '北韓收支',
+            type: 'pictorialBar',
+            barGap: '-100%',
+            symbol: 'circle',
+            itemStyle: {
+                normal: {
+                    color: '#185491'
+                }
+            },
 
-    }]
+        }
+    ]
 };
 
 var chart1 = echarts.init(document.getElementById('main'));
@@ -106,7 +108,7 @@ var option2 = {
     title: {
         text: '參加者性別與年齡分布',
     },
-    color: ['#262996','#B2232B'],
+    color: ['#262996', '#B2232B'],
     tooltip: {
         trigger: 'axis',
         axisPointer: {
@@ -114,7 +116,7 @@ var option2 = {
         }
     },
     legend: {
-        data: ['男','女']
+        data: ['男', '女']
     },
     grid: {
         left: '5%',
@@ -127,11 +129,9 @@ var option2 = {
     },
     yAxis: {
         type: 'category',
-        data: ['81-90歲', '71-80歲', '61-70歲', '51-60歲', '41-50歲', '31-40歲', '21-30歲', '11-20歲'
-        ]
+        data: ['81-90歲', '71-80歲', '61-70歲', '51-60歲', '41-50歲', '31-40歲', '21-30歲', '11-20歲']
     },
-    series: [
-        {
+    series: [{
             name: '男',
             type: 'bar',
             stack: '总量',
@@ -177,50 +177,48 @@ var option3 = {
         x: 'right',
         data: ['學生', '無業', '退休', '政府部門', '紀律部隊', '慈善機構', '金融/銀行/投資', '商業部門/顧問', '互聯網公司', '航空', '工程/軟件開發', '廣告', '教育', '出版', '其他']
     },
-    series: [
-        {
-            name: '職業',
-            type: 'pie',
-            radius: ['50%', '70%'],
-            avoidLabelOverlap: false,
-            label: {
-                normal: {
-                    show: false,
-                    position: 'center'
-                },
-                emphasis: {
-                    show: true,
-                    textStyle: {
-                        fontSize: '50',
-                        fontWeight: 'bold'
-                    }
-                }
+    series: [{
+        name: '職業',
+        type: 'pie',
+        radius: ['50%', '70%'],
+        avoidLabelOverlap: false,
+        label: {
+            normal: {
+                show: false,
+                position: 'center'
             },
-            labelLine: {
-                normal: {
-                    show: false
+            emphasis: {
+                show: true,
+                textStyle: {
+                    fontSize: '50',
+                    fontWeight: 'bold'
                 }
-            },
-            data: [
-                { value: 29, name: '學生' },
-                { value: 13, name: '無業' },
-                { value: 7, name: '退休' },
-                { value: 6, name: '政府部門' },
-                { value: 2, name: '紀律部隊' },
-                { value: 10, name: '醫院/醫療部門' },
-                { value: 3, name: '慈善機構' },
-                { value: 17, name: '金融/銀行/投資' },
-                { value: 57, name: '商業部門/顧問' },
-                { value: 8, name: '互聯網公司' },
-                { value: 5, name: '航空' },
-                { value: 13, name: '工程/軟件開發' },
-                { value: 13, name: '廣告' },
-                { value: 3, name: '教育' },
-                { value: 3, name: '出版' },
-                { value: 3, name: '其他' }
-            ]
-        }
-    ]
+            }
+        },
+        labelLine: {
+            normal: {
+                show: false
+            }
+        },
+        data: [
+            { value: 29, name: '學生' },
+            { value: 13, name: '無業' },
+            { value: 7, name: '退休' },
+            { value: 6, name: '政府部門' },
+            { value: 2, name: '紀律部隊' },
+            { value: 10, name: '醫院/醫療部門' },
+            { value: 3, name: '慈善機構' },
+            { value: 17, name: '金融/銀行/投資' },
+            { value: 57, name: '商業部門/顧問' },
+            { value: 8, name: '互聯網公司' },
+            { value: 5, name: '航空' },
+            { value: 13, name: '工程/軟件開發' },
+            { value: 13, name: '廣告' },
+            { value: 3, name: '教育' },
+            { value: 3, name: '出版' },
+            { value: 3, name: '其他' }
+        ]
+    }]
 };
 
 chart3.setOption(option3);
@@ -264,8 +262,7 @@ var option4 = {
             formatter: '{value}人'
         }
     },
-    series: [
-        {
+    series: [{
             name: '2015年',
             type: 'line',
             data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0],
@@ -301,4 +298,9 @@ var option4 = {
 chart4.setOption(option4);
 chart4.width = "600px";
 
-window.addEventListener("resize", () => { this.chart1.resize();  this.chart2.resize();  this.chart3.resize();  chart4.resize();});
+window.addEventListener("resize", () => {
+    this.chart1.resize();
+    this.chart2.resize();
+    this.chart3.resize();
+    chart4.resize();
+});
