@@ -584,29 +584,29 @@
                                     </div>
                                     <div class="input-group">
                                         <br>
-                                        <label for="r_q2">Q3. How Many person in the trip? </label>
-                                        <input class="form-control" id="r_q2" type="number" min="1" max=10 />
+                                        <label for="r_q3">Q3. How Many person in the trip? </label>
+                                        <input class="form-control" id="r_q3" type="number" min=1 max=10 value=1 />
                                     </div>
                                     <div class="input-group">
                                         <br>
                                         <label for="r_q4">Q4. 你喜歡於旅程中運動嗎？</label>
                                         <select class="form-control" id="r_q4">
-                                <option>喜歡</option>
-                                <option>不喜歡</option>
-                                <option>無所謂</option>
+                                <option value="true">喜歡</option>
+                                <option value="false">不喜歡</option>
+                                <option value="na">無所謂</option>
                             </select>
                                         <div class="input-group">
                                             <br>
                                             <label for="r_q5">Q5. 你想與北韓人民歡度節慶嗎？</label>
                                             <select class="form-control" id="r_q5">
-                                <option>想</option>
-                                <option>不想</option>
-                                <option>無所謂</option>
+                                <option value="true">想</option>
+                                <option value="false">不想</option>
+                                <option value="na">無所謂</option>
                             </select>
                                         </div>
                                     </div>
                                     <br>
-                                    <button id="summit" type="submit" class="btn btn-default">Submit</button>
+                                    <button id="summit" type="button" class="btn btn-default">Submit</button>
                             </form>
                             </div>
                         </div>
@@ -991,6 +991,7 @@
     <script src="js/elastic_grid.min.js"></script>
     <script src="js/portfolio_slider.js"></script>
     <script src="js/chart.js"></script>
+    <script src="js/route.js"></script>
     <!--For image resize-->
     <script src="js/imageMapResizer.min.js" type="text/javascript"></script>
     <!--For form slider-->
@@ -998,35 +999,203 @@
 
     <!-- Custom js-->
     <script src="js/custom.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="route.json"></script>
     <script>
+        var mySlider;
         $(document).ready(function () {
-            $("#r_q2").slider({});
             $('map').imageMapResize();
+            mySlider = $("#r_q2").slider({});
             $(".nav-tabs a").click(function () {
                 $(this).tab('show');
             });
         });
 
-        // Disable Google Maps scrolling
-        // See http://stackoverflow.com/a/25904582/1607849
-        // Disable scroll zooming and bind back the click event
-        var onMapMouseleaveHandler = function (event) {
-            var that = $(this);
-            that.on('click', onMapClickHandler);
-            that.off('mouseleave', onMapMouseleaveHandler);
-            that.find('iframe').css("pointer-events", "none");
-        }
-        var onMapClickHandler = function (event) {
-            var that = $(this);
-            // Disable the click handler until the user leaves the map area
-            that.off('click', onMapClickHandler);
-            // Enable scrolling zoom
-            that.find('iframe').css("pointer-events", "auto");
-            // Handle the mouse leave event
-            that.on('mouseleave', onMapMouseleaveHandler);
-        }
-        // Enable map zooming with mouse scroll when the user clicks the map
-        $('.map').on('click', onMapClickHandler);
+        var routes = [
+            {
+                name: "北韓勞動節精華遊",
+                price_one: 11380,
+                price_two: 11080,
+                days: 5,
+                sport: false,
+                event: true,
+                map_i: 1
+            },
+            {
+                name: "北韓勞動節特別團",
+                price_one: 12660,
+                price_two: 12360,
+                days: 9,
+                sport: false,
+                event: true,
+                map_i: 2
+            },
+            {
+                name: "端午節北韓精華遊",
+                price_one: 8800,
+                price_two: 8500,
+                days: 5,
+                sport: false,
+                event: true,
+                map_i: 3
+            },
+            {
+                name: "北韓平壤單車悠閒遊",
+                price_one: 12660,
+                price_two: 12360,
+                days: 8,
+                sport: true,
+                event: false,
+                map_i: 4
+            },
+            {
+                name: "北韓祖國解放戰爭勝利日特別團",
+                price_one: 10980,
+                price_two: 10580,
+                days: 7,
+                sport: false,
+                event: true,
+                map_i: 5
+            },
+            {
+                name: "北韓東北部深度遊",
+                price_one: 13960,
+                price_two: 13560,
+                days: 9,
+                sport: false,
+                event: false,
+                map_i: 6
+            },
+            {
+                name: "北韓光復節暨東部特別團",
+                price_one: 12980,
+                price_two: 12580,
+                days: 9,
+                sport: false,
+                event: true,
+                map_i: 7
+            },
+            {
+                name: "北韓青年節特別團",
+                price_one: 11380,
+                price_two: 10980,
+                days: 5,
+                sport: false,
+                event: true,
+                map_i: 8
+            },
+            {
+                name: "北韓國慶特別團",
+                price_one: 12660,
+                price_two: 12260,
+                days: 5,
+                sport: false,
+                event: true,
+                map_i: 9
+            },
+            {
+                name: "北韓秋季東北特別團",
+                price_one: 13960,
+                price_two: 13560,
+                days: 9,
+                sport: false,
+                event: false,
+                map_i: 10
+            },
+            {
+                name: "北韓勞動黨創建日特別團",
+                price_one: 12980,
+                price_two: 12480,
+                days: 9,
+                sport: false,
+                event: true,
+                map_i: 11
+            },
+            {
+                name: "北韓冬季跨年遊",
+                price_one: 13980,
+                price_two: 13580,
+                days: 7,
+                sport: false,
+                event: true,
+                map_i: 12
+            },
+            {
+                name: "平壤馬拉松精華遊",
+                price_one: 8800,
+                price_two: -1,
+                days: 5,
+                sport: true,
+                event: false,
+                map_i: 13
+            },
+            {
+                name: "平壤馬拉松火車特別團",
+                price_one: 10800,
+                price_two: -1,
+                days: 7,
+                sport: true,
+                event: false,
+                map_i: 14
+            },
+            {
+                name: "平壤馬拉松暨金日成壽辰特別團",
+                price_one: 13300,
+                price_two: -1,
+                days: 9,
+                sport: true,
+                event: true,
+                map_i: 15
+            }
+        ];
+
+        var tdays = 0;
+        var tp = [9000, 10000];
+        var t_person = 0;
+        var t_sport = null;
+        var t_event = null;
+        $('#summit').click(function () {
+
+            if ($("#r_q1") !== null) {
+                tdays = $("#r_q1").val();
+            }
+            if (mySlider.slider('getValue') !== null) {
+                tp = mySlider.slider('getValue');
+            }
+            if ($("#r_q3") !== null) {
+                t_person = $("#r_q3").val() % 2;
+            }
+            if ($("#r_q4") !== null) {
+                if ($("#r_q4").val() == 'true') {
+                    t_sport = true;
+                } else if ($("#r_q4").val() == 'false') {
+                    t_sport = false;
+                } else {
+                    t_sport = null;
+                }
+            }
+            if ($("#r_q5") !== null) {
+                if ($("#r_q5").val() == 'true') {
+                    t_event = true;
+                } else if ($("#r_q5").val() == 'false') {
+                    t_event = false;
+                } else {
+                    t_event = null;
+                }
+            }
+
+            var t_routes = $.grep(routes, function (o, index) {
+                if (t_person == 0 && o.price_two !== -1) {
+                    return o.days == tdays && tp[0] < o.price_two && tp[1] > o.price_two
+                } else {
+                    return o.days == tdays && tp[0] < o.price_one && tp[1] > o.price_one
+                }
+            });
+                console.log(t_routes);
+            for (var i = 0, l = t_routes.length; i < l; i++) {
+                console.log(t_routes[i].name);
+            }
+        });
     </script>
 
     <script>
