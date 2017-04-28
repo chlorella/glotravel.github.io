@@ -879,13 +879,7 @@
                                                         }
                                                     },
                                                     tooltip: {
-                                                        trigger: 'item',
-                                                        formatter: function(params) {
-                                                            var value = (params.value + '').split('.');
-                                                            value = value[0].replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,') +
-                                                                '.' + value[1];
-                                                            return params.seriesName + '<br/>' + params.name + ' : ' + value + '人';
-                                                        }
+                                                        trigger: 'value',
                                                     },
                                                     visualMap: {
                                                         show: false,
@@ -1393,7 +1387,7 @@
             sport: true,
             event: true,
             map_i: 'map13'
-        }];
+        }, ];
 
         var tdays = 0;
         var tp = [9000, 15000];
