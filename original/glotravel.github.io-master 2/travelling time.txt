@@ -1,0 +1,67 @@
+option = {
+    title: {
+        text: '到訪北韓月份分布',
+    },
+        color:['#A11FFF','#16E042','#FFA322'],
+    tooltip: {
+        trigger: 'axis'
+    },
+    legend: {
+        data:['2015年','2016年','2017年']
+    },
+    toolbox: {
+        show: true,
+        feature: {
+            dataZoom: {
+                yAxisIndex: 'none'
+            },
+            dataView: {readOnly: false},
+            magicType: {type: ['line', 'bar']},
+            restore: {},
+            saveAsImage: {}
+        }
+    },
+    xAxis:  {
+        type: 'category',
+        boundaryGap: false,
+        data: ['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月']
+    },
+    yAxis: {
+        type: 'value',
+        axisLabel: {
+            formatter: '{value}人'
+        }
+    },
+    series: [
+        {
+            name:'2015年',
+            type:'line',
+            data:[0,0,0,0,0,0,0,0,0,4,0,0],
+            markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'}
+                ]
+            },
+        },
+        {
+            name:'2016年',
+            type:'line',
+            data:[0,0,9,0,7,0,22,15,10,23,0,12],
+            markPoint: {
+                data: [
+                     {type: 'max', name: '最大值'}
+                ]
+            },
+        },
+        {
+            name:'2017年',
+            type:'line',
+            data:[10,0,0,80,0,0,0,0,0,0,0,0],
+            markPoint: {
+                data: [
+                    {type: 'max', name: '最大值'},
+                ]
+            },
+        }
+    ]
+};

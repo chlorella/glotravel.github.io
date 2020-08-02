@@ -1,0 +1,107 @@
+
+var latlong = {};
+latlong.CN = {'latitude':35, 'longitude':105};
+latlong.DE = {'latitude':51, 'longitude':9};
+latlong.JP = {'latitude':36, 'longitude':138};
+latlong.MC = {'latitude':22.19, 'longitude':113.54};
+latlong.TW = {'latitude':23.5, 'longitude':121};
+latlong.GB = {'latitude':54, 'longitude':-2};
+latlong.US = {'latitude':38, 'longitude':-97};
+latlong.HK = {'latitude':22.25, 'longitude':114.1667};
+
+var mapData = [
+{'code':'CN' , 'name':'中國', 'value':1, 'color':'#FFD213'},
+{'code':'DE' , 'name':'德國', 'value':1, 'color':'#FFD213'},
+{'code':'JP' , 'name':'日本', 'value':1, 'color':'#FFD213'},
+{'code':'MC' , 'name':'澳門', 'value':4, 'color':'#FFD213'},
+{'code':'TW' , 'name':'台灣', 'value':7, 'color':'#FFD213'},
+{'code':'GB' , 'name':'英國', 'value':2, 'color':'#FFD213'},
+{'code':'US' , 'name':'美國', 'value':1, 'color':'#FFD213'},
+{'code':'HK' , 'name':'香港', 'value':175, 'color':'#FFD213'}];
+
+var max = -Infinity;
+var min = Infinity;
+mapData.forEach(function (itemOpt) {
+    if (itemOpt.value > max) {
+        max = itemOpt.value;
+    }
+    if (itemOpt.value < min) {
+        min = itemOpt.value;
+    }
+});
+
+option = {
+    backgroundColor: '#ffffff',
+    title : {
+        text: '參加者居住地',
+        left: 'center',
+        top: 'top',
+        textStyle: {
+            color: '#fff'
+        }
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter : function (params) {
+            var value = (params.value + '').split('.');
+            value = value[0].replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,')
+                    + '.' + value[1];
+            return params.seriesName + '<br/>' + params.name + ' : ' + value+'人';
+        }
+    },
+    visualMap: {
+        show: false,
+        min: 0,
+        max: max,
+        inRange: {
+            symbolSize: [6, 60]
+        }
+    },
+    geo: {
+        name: '參加者居住地',
+        type: 'map',
+        map: 'world',
+        roam: true,
+        label: {
+            emphasis: {
+                show: true
+            }
+        },
+        itemStyle: {
+            normal: {
+                areaColor: '#092B33',
+                borderColor: '#6A7B94'
+            },
+            emphasis: {
+                areaColor: '#2a333d'
+            }
+        }
+    },
+    series : [
+        {
+            type: 'scatter',
+            coordinateSystem: 'geo',
+            data: mapData.map(function (itemOpt) {
+                return {
+                    name: itemOpt.name,
+                    value: [
+                        latlong[itemOpt.code].longitude,
+                        latlong[itemOpt.code].latitude,
+                        itemOpt.value
+                    ],
+                    label: {
+                        emphasis: {
+                            position: 'right',
+                            show: true
+                        }
+                    },
+                    itemStyle: {
+                        normal: {
+                            color: itemOpt.color
+                        }
+                    }
+                };
+            })
+        }
+    ]
+};
